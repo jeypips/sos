@@ -1,0 +1,28 @@
+ <!-- start form for personal information -->
+<div class="col-md-12 col-sm-12 col-xs-12">
+	<div class="x_panel">
+		<div class="x_title">
+			<h2><i class="fa fa-user"></i> Offense</h2>
+			<ul class="nav navbar-right panel_toolbox">
+			<button class="btn btn-default" ng-click="form.edit(this)"><i class="fa" ng-class="{'fa-edit': controls.ok.btn, 'fa-ban': !controls.ok.btn}"></i></button>
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+	<form name="formHolder.offense" id="formHolder.offense" novalidate autocomplete="off">
+	<br>
+	<div class="row">
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+			<label>ID number & Name</label>
+			<input type="text" class="form-control" name="student_no" ng-model="offense.student_no" uib-typeahead="s.fullname for s in students | filter:{fullname:$viewValue}" typeahead-min-length="2" typeahead-on-select="form.fullnameSelect($item, this)" ng-disabled="controls.ok.btn">
+		</div>
+	</div>
+	<div class="ln_solid"></div>
+	</form>
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+			<button class="btn btn-default" type="submit" ng-click="form.list(this)" ng-disabled="controls.cancel.btn">{{controls.cancel.label}}</button>
+			<button class="btn btn-info" type="submit" ng-click="form.save(this)" ng-disabled="controls.ok.btn">{{controls.ok.label}}</button>
+		</div>
+	</div>
+</div>
+
+<!-- end form for subject information -->

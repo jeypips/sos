@@ -1,4 +1,4 @@
-angular.module('offenses-module',['bootstrap-modal','bootstrap-growl']).factory('form', function($compile,$timeout,$http,bootstrapModal,growl) {
+angular.module('offenses-module',['ui.bootstrap','bootstrap-modal','bootstrap-growl']).factory('form', function($compile,$timeout,$http,bootstrapModal,growl) {
 	
 	function form() {
 		
@@ -25,6 +25,17 @@ angular.module('offenses-module',['bootstrap-modal','bootstrap-growl']).factory(
 			scope.offense.offense_id = 0;
 	
 			scope.offenses = []; // list
+			
+			$http({
+				method: 'POST',
+				url: 'api/suggestions/students.php'
+			}).then(function mySucces(response) {
+				
+				scope.students = response.data;
+				
+			},function myError(response) {
+				
+			});
 		};
 
 		function validate(scope) {
@@ -172,7 +183,6 @@ angular.module('offenses-module',['bootstrap-modal','bootstrap-growl']).factory(
 				
 			});
 			
-			
 			$('#x_content').html(loading);
 			$('#x_content').load('lists/offenses.html', function() {
 				$timeout(function() { $compile($('#x_content')[0])(scope); },100);								
@@ -184,6 +194,12 @@ angular.module('offenses-module',['bootstrap-modal','bootstrap-growl']).factory(
 				},200);
 				
 			});				
+			
+		};
+		
+		self.fullnameSelect = function($item, scope) {
+			
+			scope.offense.student_no = $item;
 			
 		};
 		

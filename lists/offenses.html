@@ -11,7 +11,7 @@
 	<table id="offense" class="table table-striped">
 		<thead>
 		<tr>
-			<th>No</th>
+			<th>Id Number</th>
 			<th>Name</th>
 			<th>Educational Level</th>
 			<th>Offense</th>
@@ -20,7 +20,7 @@
 		</thead>
 		<tbody>
 		<tr ng-repeat="o in offenses">
-			<td>{{o.offense_id}}</td>
+			<td>{{o.id_number}}</td>
 			<td>{{o.lastname}}, {{o.firstname}} {{o.middlename}}</td>
 			<td>{{o.educational_level}}</td>
 			<td>{{o.type}}</td>

@@ -9,6 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Offenses | Student Offline System</title>
+	<link rel="stylesheet" href="docs/css/bootstrap-3.3.2.min.css" type="text/css">
+	<link rel="stylesheet" href="docs/css/bootstrap-example.css" type="text/css">
+	<link rel="stylesheet" href="docs/css/prettify.css" type="text/css">
 
     <!-- Bootstrap -->
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -23,6 +26,7 @@
     <link href="vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
     <link href="vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+	
     <!-- bootstrap-daterangepicker -->
     <link href="vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 	
@@ -62,6 +66,7 @@
 
             <br />
 
+			
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
@@ -156,12 +161,7 @@
     <script src="vendors/iCheck/icheck.min.js"></script>
     <!-- Skycons -->
     <script src="vendors/skycons/skycons.js"></script>
-    <!-- Flot -->
-    <script src="vendors/Flot/jquery.flot.js"></script>
-    <script src="vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="vendors/Flot/jquery.flot.time.js"></script>
-    <script src="vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="vendors/Flot/jquery.flot.resize.js"></script>
+
     <!-- Flot plugins -->
     <script src="vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
     <script src="vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
@@ -201,6 +201,7 @@
 	<!-- Custom Theme Scripts -->
     <script src="build/js/custom.min.js"></script>
     <script src="angular/angular.min.js"></script>
+	<script src="modules/ui-bootstrap-tpls-2.5.0.min.js"></script>
     <script src="modules/fullscreen.js"></script>
     <script src="modules/bootstrap-modal.js"></script>
     <script src="modules/account.js"></script>

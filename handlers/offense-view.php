@@ -7,8 +7,9 @@ require_once '../db.php';
 session_start();
 
 $con = new pdo_db();
-
 $offense = $con->getData("SELECT * FROM offenses WHERE offense_id = $_POST[offense_id]");
+$student = $con->getData("SELECT *, CONCAT(id_number,' ',firstname,',',' ',lastname,' ', middlename) fullname FROM students WHERE student_id = ".$offense[0]['student_no']);
+$offense[0]['student_no'] = $student[0];
 
 header("Content-Type: application/json");
 echo json_encode($offense[0]);
