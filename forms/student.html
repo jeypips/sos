@@ -1,0 +1,76 @@
+ <!-- start form for personal information -->
+<div class="col-md-12 col-sm-12 col-xs-12">
+	<div class="x_panel">
+		<div class="x_title">
+			<h2><i class="fa fa-user"></i> Basic Information</h2>
+			<ul class="nav navbar-right panel_toolbox">
+			<button class="btn btn-default" ng-click="form.edit(this)"><i class="fa" ng-class="{'fa-edit': controls.ok.btn, 'fa-ban': !controls.ok.btn}"></i></button>
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+	<form name="formHolder.student" id="formHolder.student">
+	<br>
+	<div class="row">
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+			<label>Id Number</label>
+			<input type="text" class="form-control" name="id_number" ng-model="student.id_number" ng-disabled="controls.ok.btn">
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.lastname.$touched && formHolder.student.lastname.$invalid}">
+			<label>Last Name</label>
+			<input type="text" class="form-control" name="lastname" ng-model="student.lastname" required ng-disabled="controls.ok.btn">
+			<span class="help-block" ng-show="formHolder.student.lastname.$touched && formHolder.student.lastname.$invalid">Last name is required</span>
+		</div>
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.firstname.$touched && formHolder.student.firstname.$invalid}">
+			<label>First Name</label>
+			<input type="text" class="form-control" name="firstname" ng-model="student.firstname" required ng-disabled="controls.ok.btn"> 
+			<span class="help-block" ng-show="formHolder.student.firstname.$touched && formHolder.student.firstname.$invalid">First name is required</span>
+		</div>
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.middlename.$touched && formHolder.student.middlename.$invalid}">
+			<label>Middle Name</label>
+			<input type="text" class="form-control" name="middlename" ng-model="student.middlename" required ng-disabled="controls.ok.btn"> 
+		<span class="help-block" ng-show="formHolder.student.middlename.$touched && formHolder.student.middlename.$invalid">Middle name is required</span>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col-md-4 col-sm-12 col-xs-12">
+			<label>Educational Level</label>
+			<select class="form-control" ng-model="student.educational_level" ng-disabled="controls.ok.btn">
+				<option value="Senior High School">Senior High School</option>
+				<option value="College">College</option>
+			</select>
+		</div>
+		<div ng-show="student.educational_level=='Senior High School'">
+			<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+				<label>Grade</label>
+				<input type="text" class="form-control" name="grade" ng-model="student.grade" ng-disabled="controls.ok.btn"> 
+			</div>
+			<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+				<label>Section</label>
+				<input type="text" class="form-control" name="grade" ng-model="student.grade" ng-disabled="controls.ok.btn"> 
+			</div>
+		</div>
+		<div ng-show="student.educational_level=='College'">
+			<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+				<label>Year</label>
+				<input type="text" class="form-control" name="year" ng-model="student.year" ng-disabled="controls.ok.btn"> 
+			</div>
+			<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+				<label>Course</label>
+				<input type="text" class="form-control" name="course" ng-model="student.course" ng-disabled="controls.ok.btn"> 
+			</div>
+		</div>
+	</div>
+	<div class="ln_solid"></div>
+	</form>
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+			<button class="btn btn-default" type="button" ng-click="form.list(this)" ng-disabled="controls.cancel.btn">{{controls.cancel.label}}</button>
+			<button class="btn btn-info" type="button" ng-click="form.save(this)" ng-disabled="controls.ok.btn">{{controls.ok.label}}</button>
+		</div>
+	</div>
+</div>
+
+<!-- end form for subject information -->
