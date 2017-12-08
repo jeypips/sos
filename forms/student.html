@@ -45,14 +45,31 @@
 		</div>
 		<div ng-show="student.educational_level=='Senior High School'">
 			<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-				<label>Grade</label>
-				<input type="text" class="form-control" name="grade" ng-model="student.grade" ng-disabled="controls.ok.btn"> 
+				<label>Year</label>
+				<input type="text" class="form-control" name="year" ng-model="student.grade" ng-disabled="controls.ok.btn"> 
 			</div>
-			<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+			<div class="col-md-4 col-sm-12 col-xs-12">
 				<label>Section</label>
-				<input type="text" class="form-control" name="grade" ng-model="student.grade" ng-disabled="controls.ok.btn"> 
+				<select class="form-control" ng-model="student.section" ng-disabled="controls.ok.btn">
+					<option ng-show="student.grade=='11'" value="Artemis">Artemis</option>
+					<option ng-show="student.grade=='11'" value="Hemera">Hemera</option>
+					<option ng-show="student.grade=='11'" value="Eros">Eros</option>
+					<option ng-show="student.grade=='11'" value="Demeter">Demeter</option>
+					<option ng-show="student.grade=='11'" value="Uranus">Uranus</option>
+					<option ng-show="student.grade=='11'" value="Themis">Themis</option>
+					<option ng-show="student.grade=='11'" value="Nyx">Nyx</option>
+					<option ng-show="student.grade=='11'" value="Apollo">Apollo</option>
+					<option ng-show="student.grade=='12'" value="Menerva">Menerva</option>
+					<option ng-show="student.grade=='12'" value="Persephone">Persephone</option>
+					<option ng-show="student.grade=='12'" value="Hades">Hades</option>
+					<option ng-show="student.grade=='12'" value="Dionysus">Dionysus</option>
+					<option ng-show="student.grade=='12'" value="Chronos">Chronos</option>
+					<option ng-show="student.grade=='12'" value="Janus">Janus</option>
+					<option ng-show="student.grade=='12'" value="Vesta">Vesta</option>
+				</select>
 			</div>
 		</div>
+		
 		<div ng-show="student.educational_level=='College'">
 			<div class="col-md-4 col-sm-12 col-xs-12 form-group">
 				<label>Year</label>

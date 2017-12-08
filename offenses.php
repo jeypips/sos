@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Offenses | Student Offline System</title>
+    <title>Offenses | Offline Student System</title>
 	<link rel="stylesheet" href="docs/css/bootstrap-3.3.2.min.css" type="text/css">
 	<link rel="stylesheet" href="docs/css/bootstrap-example.css" type="text/css">
 	<link rel="stylesheet" href="docs/css/prettify.css" type="text/css">
@@ -47,7 +47,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><span style="font-size: 20px;">Student Offline System</span></a>
+              <a href="index.html" class="site_title"><span style="font-size: 20px;">Offline Student System</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -129,6 +129,7 @@
           <div class="row">
 			  <div id="x_content" class="x_content"></div> <!-- /display -->
 		  </div>
+		  
         </div>
         <!-- /page content -->
 

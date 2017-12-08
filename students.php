@@ -124,6 +124,7 @@
           <div class="row">
 			  <div id="x_content" class="x_content"></div> <!-- /display -->
 		  </div>
+		  
         </div>
         <!-- /page content -->
 
