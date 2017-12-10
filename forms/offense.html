@@ -16,6 +16,44 @@
 			<input type="text" class="form-control" name="student_no" ng-model="offense.student_no" uib-typeahead="s.fullname for s in students | filter:{fullname:$viewValue}" typeahead-min-length="2" typeahead-on-select="form.fullnameSelect($item, this)" ng-disabled="controls.ok.btn">
 		</div>
 	</div>
+	<hr>
+	<label>Type of Offense</label>
+	<div class="row">
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+			<input type="checkbox" name="inc_uniform" ng-model="offense.inc_uniform">
+			<label>No/Incomplete Uniform</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+			<input type="checkbox" name="late_tardy" ng-model="offense.late_tardy">
+			<label>Late/Tardy</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+			<input type="checkbox" name="absent" ng-model="offense.absent">
+			<label>Absent</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+			<input type="checkbox" name="no_id" ng-model="offense.no_id">
+			<label>No ID</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+			<input type="checkbox" name="cutting_classes" ng-model="offense.cutting_classes">
+			<label>Cutting Classes</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+			<input type="checkbox" ng-model="others">
+			<label>Others (please specify)</label> <input type="text" class="form-control" ng-show="others" ng-model="offense.others">
+		</div>
+	</div>
 	<div class="ln_solid"></div>
 	</form>
 		<div class="col-md-4 col-sm-12 col-xs-12 form-group">

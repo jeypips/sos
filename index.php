@@ -36,7 +36,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><span style="font-size: 20px;">Student Offline System</span></a>
+              <a href="index.html" class="site_title"><i class="fa fa-users"></i> <span style="font-size: 16px;">Offline Student System</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -215,7 +215,6 @@
 	<script src="vendors/bootbox/bootbox.min.js"></script>	
 	
 	<!-- Custom Theme Scripts -->
-    <script src="build/js/custom.min.js"></script>
     <script src="angular/angular.min.js"></script>
     <script src="modules/fullscreen.js"></script>
     <script src="modules/bootstrap-modal.js"></script>

@@ -15,6 +15,12 @@
 			<label>Id Number</label>
 			<input type="text" class="form-control" name="id_number" ng-model="student.id_number" ng-disabled="controls.ok.btn">
 		</div>
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+		</div>
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+			<label>Date</label>
+			<input type="date" class="form-control" name="date" ng-model="student.date" ng-disabled="controls.ok.btn">
+		</div>
 	</div>
 	<br>
 	<div class="row">
@@ -79,7 +85,7 @@
 				<label>Course</label>
 				<select class="form-control" ng-model="student.course" ng-disabled="controls.ok.btn">
 					<option value="Bachelor of Science in Information Technology">Bachelor of Science in Information Technology</option>
-					<option value="CHS">CHS</option>
+					<option value="Computer Hardware Services">Computer Hardware Services</option>
 					<option value="Bachelor of Science in Hotel and Restaurant Management">Bachelor of Science in Hotel and Restaurant Management</option>
 				</select>
 			</div>

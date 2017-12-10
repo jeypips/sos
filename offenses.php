@@ -9,10 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Offenses | Offline Student System</title>
-	<link rel="stylesheet" href="docs/css/bootstrap-3.3.2.min.css" type="text/css">
-	<link rel="stylesheet" href="docs/css/bootstrap-example.css" type="text/css">
-	<link rel="stylesheet" href="docs/css/prettify.css" type="text/css">
-
+	
     <!-- Bootstrap -->
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -47,7 +44,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><span style="font-size: 20px;">Offline Student System</span></a>
+              <a href="index.html" class="site_title"><i class="fa fa-users"></i> <span style="font-size: 16px;">Offline Student System</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -163,10 +160,6 @@
     <!-- Skycons -->
     <script src="vendors/skycons/skycons.js"></script>
 
-    <!-- Flot plugins -->
-    <script src="vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-    <script src="vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-    <script src="vendors/flot.curvedlines/curvedLines.js"></script>
     <!-- DateJS -->
     <script src="vendors/DateJS/build/date.js"></script>
     <!-- JQVMap -->
@@ -200,7 +193,6 @@
 	<script src="vendors/growl/jquery.bootstrap-growl.min.js"></script> 	
 	
 	<!-- Custom Theme Scripts -->
-    <script src="build/js/custom.min.js"></script>
     <script src="angular/angular.min.js"></script>
 	<script src="modules/ui-bootstrap-tpls-2.5.0.min.js"></script>
     <script src="modules/fullscreen.js"></script>

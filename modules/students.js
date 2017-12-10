@@ -79,6 +79,7 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl']).factory(
 				}).then(function mySucces(response) {
 					
 					angular.copy(response.data, scope.student);
+					scope.student.date = new Date(response.data.date);
 					
 				}, function myError(response) {
 					 

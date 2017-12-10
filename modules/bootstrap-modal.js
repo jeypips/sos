@@ -12,7 +12,7 @@ angular.module('bootstrap-modal',[]).service('bootstrapModal', function($compile
 				},				
 				cancel: {
 					label: 'Close',
-					className: 'btn btn-googleplus'
+					className: 'btn btn-default'
 				}
 			},
 			callback: function (result) {
