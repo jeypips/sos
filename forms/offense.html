@@ -16,6 +16,13 @@
 			<input type="text" class="form-control" name="student_no" ng-model="offense.student_no" required uib-typeahead="s.fullname for s in students | filter:{fullname:$viewValue}" typeahead-min-length="2" typeahead-on-select="form.fullnameSelect($item, this)" ng-disabled="controls.ok.btn">
 			<span class="help-block" ng-show="formHolder.offense.student_no.$touched && formHolder.offense.student_no.$invalid">Name is required</span>
 		</div>
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+		</div>
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.offense.offs_date.$touched && formHolder.offense.offs_date.$invalid}">
+			<label>Date</label>
+			<input type="date" class="form-control" name="offs_date" ng-model="offense.offs_date" required ng-disabled="controls.ok.btn">
+			<span class="help-block" ng-show="formHolder.offense.offs_date.$touched && formHolder.offense.offs_date.$invalid">Date is required</span>
+		</div>
 	</div>
 	<hr>
 	<label>Type of Offense</label>

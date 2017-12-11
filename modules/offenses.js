@@ -90,6 +90,7 @@ angular.module('offenses-module',['ui.bootstrap','bootstrap-modal','bootstrap-gr
 				}).then(function mySucces(response) {
 					
 					angular.copy(response.data, scope.offense);
+					scope.offense.offs_date = new Date(response.data.offs_date);
 					
 				}, function myError(response) {
 					 
