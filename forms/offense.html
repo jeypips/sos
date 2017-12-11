@@ -11,47 +11,48 @@
 	<form name="formHolder.offense" id="formHolder.offense" novalidate autocomplete="off">
 	<br>
 	<div class="row">
-		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-			<label>ID number & Name</label>
-			<input type="text" class="form-control" name="student_no" ng-model="offense.student_no" uib-typeahead="s.fullname for s in students | filter:{fullname:$viewValue}" typeahead-min-length="2" typeahead-on-select="form.fullnameSelect($item, this)" ng-disabled="controls.ok.btn">
+		<div class="col-md-4 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.offense.student_no.$touched && formHolder.offense.student_no.$invalid}">
+			<label>Name</label>
+			<input type="text" class="form-control" name="student_no" ng-model="offense.student_no" required uib-typeahead="s.fullname for s in students | filter:{fullname:$viewValue}" typeahead-min-length="2" typeahead-on-select="form.fullnameSelect($item, this)" ng-disabled="controls.ok.btn">
+			<span class="help-block" ng-show="formHolder.offense.student_no.$touched && formHolder.offense.student_no.$invalid">Name is required</span>
 		</div>
 	</div>
 	<hr>
 	<label>Type of Offense</label>
 	<div class="row">
 		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-			<input type="checkbox" name="inc_uniform" ng-model="offense.inc_uniform">
+			<input type="checkbox" name="inc_uniform" ng-model="offense.inc_uniform" ng-disabled="controls.ok.btn">
 			<label>No/Incomplete Uniform</label>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-			<input type="checkbox" name="late_tardy" ng-model="offense.late_tardy">
+			<input type="checkbox" name="late_tardy" ng-model="offense.late_tardy" ng-disabled="controls.ok.btn">
 			<label>Late/Tardy</label>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-			<input type="checkbox" name="absent" ng-model="offense.absent">
+			<input type="checkbox" name="absent" ng-model="offense.absent" ng-disabled="controls.ok.btn">
 			<label>Absent</label>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-			<input type="checkbox" name="no_id" ng-model="offense.no_id">
+			<input type="checkbox" name="no_id" ng-model="offense.no_id" ng-disabled="controls.ok.btn">
 			<label>No ID</label>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-			<input type="checkbox" name="cutting_classes" ng-model="offense.cutting_classes">
+			<input type="checkbox" name="cutting_classes" ng-model="offense.cutting_classes" ng-disabled="controls.ok.btn">
 			<label>Cutting Classes</label>
 		</div>
 	</div>
 	<div class="row">
 		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-			<input type="checkbox" ng-model="others">
-			<label>Others (please specify)</label> <input type="text" class="form-control" ng-show="others" ng-model="offense.others">
+			<input type="checkbox" ng-model="offense.check_others" ng-disabled="controls.ok.btn">
+			<label>Others (please specify)</label> <input type="text" class="form-control" ng-disabled="controls.ok.btn" ng-show="offense.check_others" ng-model="offense.others">
 		</div>
 	</div>
 	<div class="ln_solid"></div>
