@@ -12,8 +12,8 @@ $_POST['offense']['student_no'] = $_POST['offense']['student_no']['student_id'];
 if (isset($_POST['inc_uniform']))    
 {    
 	$_POST['inc_uniform'] = ($_POST['inc_uniform'])?1:0; 
-	$_POST['late_tardy'] = ($_POST['late_tardy'])?1:0;	
-	/* $_POST['absent'] = ($_POST['absent'])?1:0;		
+	/* $_POST['late_tardy'] = ($_POST['late_tardy'])?1:0;	
+	$_POST['absent'] = ($_POST['absent'])?1:0;		
 	$_POST['no_id'] = ($_POST['no_id'])?1:0;	
 	$_POST['cutting_classes'] = ($_POST['cutting_classes'])?1:0;
 	$_POST['cutting_classes'] = ($_POST['check_others'])?1:0; */
