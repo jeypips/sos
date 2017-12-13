@@ -26,8 +26,8 @@ if (isset($_POST['offense']['inc_uniform'],$_POST['offense']['late_tardy'],$_POS
 	$_POST['offense']['recom_others_cb'] = ($_POST['offense']['recom_others_cb'])?1:0;
 }
 
-$_POST['offense']['offs_date'] =  date("Y-m-d",strtotime($_POST['offense']['offs_date']));
-// $_POST['offense']['recom_date'] =  date("Y-m-d",strtotime($_POST['offense']['recom_date']));
+// $_POST['offense']['offs_date'] =  date("Y-m-d",strtotime($_POST['offense']['offs_date']));
+$_POST['offense']['recom_date'] =  date("Y-m-d",strtotime($_POST['offense']['recom_date']));
 
 if ($_POST['offense']['offense_id']) {
 	

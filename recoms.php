@@ -8,10 +8,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Students | Student Offline System</title>
+    <title>Recommendation | Offline Student System</title>
 	
 	<link rel="icon" type="image/ico" href="pictures/logo.jpg">
-
+	
     <!-- Bootstrap -->
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -25,6 +25,7 @@
     <link href="vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
     <!-- JQVMap -->
     <link href="vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
+	
     <!-- bootstrap-daterangepicker -->
     <link href="vendors/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
 	
@@ -38,8 +39,14 @@
     <!-- Custom Theme Style -->
     <link href="build/css/custom.min.css" rel="stylesheet">
   </head>
-
-  <body class="nav-md" ng-app="students" ng-controller="studentsCtrl" account-profile>
+<style>
+input[type="checkbox"]{
+  width:17px;
+  height:17px; 
+  cursor: pointer;
+}
+</style>
+  <body class="nav-md" ng-app="offenses" ng-controller="offensesCtrl" account-profile>
     <div class="container body">
       <div class="main_container">
         <div class="col-md-3 left_col">
@@ -64,6 +71,7 @@
 
             <br />
 
+			
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
@@ -151,16 +159,7 @@
     <script src="vendors/iCheck/icheck.min.js"></script>
     <!-- Skycons -->
     <script src="vendors/skycons/skycons.js"></script>
-    <!-- Flot -->
-    <script src="vendors/Flot/jquery.flot.js"></script>
-    <script src="vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="vendors/Flot/jquery.flot.time.js"></script>
-    <script src="vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="vendors/Flot/jquery.flot.resize.js"></script>
-    <!-- Flot plugins -->
-    <script src="vendors/flot.orderbars/js/jquery.flot.orderBars.js"></script>
-    <script src="vendors/flot-spline/js/jquery.flot.spline.min.js"></script>
-    <script src="vendors/flot.curvedlines/curvedLines.js"></script>
+
     <!-- DateJS -->
     <script src="vendors/DateJS/build/date.js"></script>
     <!-- JQVMap -->
@@ -195,11 +194,12 @@
 	
 	<!-- Custom Theme Scripts -->
     <script src="angular/angular.min.js"></script>
+	<script src="modules/ui-bootstrap-tpls-2.5.0.min.js"></script>
     <script src="modules/fullscreen.js"></script>
     <script src="modules/bootstrap-modal.js"></script>
     <script src="modules/account.js"></script>
     <script src="modules/growl.js"></script>
-    <script src="modules/students.js"></script>
-    <script src="controllers/students.js"></script>
+    <script src="modules/recoms.js"></script>
+    <script src="controllers/recoms.js"></script>
   </body>
 </html>
