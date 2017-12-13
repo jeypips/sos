@@ -16,6 +16,7 @@ $offense[0]['no_id'] = ($offense[0]['no_id'])?true:false;
 $offense[0]['cutting_classes'] = ($offense[0]['cutting_classes'])?true:false;
 $offense[0]['check_others'] = ($offense[0]['check_others'])?true:false;
 $offense[0]['recom_others_cb'] = ($offense[0]['recom_others_cb'])?true:false;
+$offense[0]['recommendation'] = ($offense[0]['recommendation'])?true:false;
 $offense[0]['student_no'] = $student[0];
 
 header("Content-Type: application/json");

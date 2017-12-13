@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Students | Student Offline System</title>
+	
+	<link rel="icon" type="image/ico" href="pictures/logo.jpg">
 
     <!-- Bootstrap -->
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -77,17 +79,8 @@
             <!-- /sidebar menu -->
 
             <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" logout-account>
+             <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Logout" logout-account class="pull-right">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>

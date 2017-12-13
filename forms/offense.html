@@ -24,7 +24,7 @@
 			<span class="help-block" ng-show="formHolder.offense.offs_date.$touched && formHolder.offense.offs_date.$invalid">Date is required</span>
 		</div>
 	</div>
-	<br>
+	<hr>
 	<div class="col-lg-5">
 	<label>Type of Offense</label>
 	<div class="row">
@@ -73,7 +73,8 @@
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<label>Recommendation</label>
-			<br>
+			<input type="checkbox" ng-model="offense.recommendation" name="recommendation">
+			<!-- <br>
 			<select class="form-control" ng-model="offense.recommendation" ng-disabled="controls.ok.btn">
 				<option value="To be admitted and be excuse">To be admitted and be excuse</option>
 				<option value="To be admitted but NOT excuse">To be admitted but NOT excuse</option>
@@ -81,7 +82,7 @@
 				<option value="To be admitted any after completion of what is required">To be admitted any after completion of what is required</option>
 				<option value="To be dropped for incurring equivalent to 20% of total number of lecture/laboratory hours">To be dropped for incurring equivalent to 20% of total number of lecture/laboratory hours</option>
 				<option value="To send parent notification for parent's conference">To send parent notification for parent's conference</option>
-			</select>
+			</select> -->
 		</div>
 	</div>
 	<br>

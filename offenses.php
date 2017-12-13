@@ -10,6 +10,8 @@
 
     <title>Offenses | Offline Student System</title>
 	
+	<link rel="icon" type="image/ico" href="pictures/logo.jpg">
+	
     <!-- Bootstrap -->
     <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -37,7 +39,13 @@
     <!-- Custom Theme Style -->
     <link href="build/css/custom.min.css" rel="stylesheet">
   </head>
-
+<style>
+input[type="checkbox"]{
+  width:17px;
+  height:17px; 
+  cursor: pointer;
+}
+</style>
   <body class="nav-md" ng-app="offenses" ng-controller="offensesCtrl" account-profile>
     <div class="container body">
       <div class="main_container">
@@ -79,17 +87,8 @@
             <!-- /sidebar menu -->
 
             <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="FullScreen">
-                <span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Lock">
-                <span class="glyphicon glyphicon-eye-close" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout" logout-account>
+             <div class="sidebar-footer hidden-small">
+              <a data-toggle="tooltip" data-placement="top" title="Logout" logout-account class="pull-right">
                 <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
               </a>
             </div>
