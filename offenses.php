@@ -80,6 +80,7 @@ input[type="checkbox"]{
                   <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
 				  <li><a href="students.php"><i class="fa fa-user"></i> Students</a></li>
 				  <li><a href="offenses.php"><i class="fa fa-list-ol"></i> Offenses</a></li>
+				  <li><a href="recoms.php"><i class="fa fa-book"></i> Recommendations</a></li>
                 </ul>   
               </div>
 
