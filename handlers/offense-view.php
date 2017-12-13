@@ -16,7 +16,12 @@ $offense[0]['no_id'] = ($offense[0]['no_id'])?true:false;
 $offense[0]['cutting_classes'] = ($offense[0]['cutting_classes'])?true:false;
 $offense[0]['check_others'] = ($offense[0]['check_others'])?true:false;
 $offense[0]['recom_others_cb'] = ($offense[0]['recom_others_cb'])?true:false;
-$offense[0]['recommendation'] = ($offense[0]['recommendation'])?true:false;
+$offense[0]['admitted_excuse'] = ($offense[0]['admitted_excuse'])?true:false;
+$offense[0]['admitted_notexcuse'] = ($offense[0]['admitted_notexcuse'])?true:false;
+$offense[0]['academic_loses'] = ($offense[0]['academic_loses'])?true:false;
+$offense[0]['completion_required'] = ($offense[0]['completion_required'])?true:false;
+$offense[0]['dropped'] = ($offense[0]['dropped'])?true:false;
+$offense[0]['parent_notification'] = ($offense[0]['parent_notification'])?true:false;
 $offense[0]['student_no'] = $student[0];
 
 header("Content-Type: application/json");

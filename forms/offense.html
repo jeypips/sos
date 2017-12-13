@@ -72,8 +72,8 @@
 	<div class="col-lg-7">
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12">
-			<label>Recommendation</label>
-			<input type="checkbox" ng-model="offense.recommendation" name="recommendation">
+			<label>Recommendations</label>
+			
 			<!-- <br>
 			<select class="form-control" ng-model="offense.recommendation" ng-disabled="controls.ok.btn">
 				<option value="To be admitted and be excuse">To be admitted and be excuse</option>
@@ -86,6 +86,41 @@
 		</div>
 	</div>
 	<br>
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+			<input type="checkbox" ng-model="offense.admitted_excuse" name="admitted_excuse" ng-disabled="controls.ok.btn">
+			<label>To be admitted and be excuse</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+			<input type="checkbox" ng-model="offense.admitted_notexcuse" name="admitted_notexcuse" ng-disabled="controls.ok.btn">
+			<label>To be admitted but NOT excuse</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+			<input type="checkbox" ng-model="offense.academic_loses" name="academic_loses" ng-disabled="controls.ok.btn">
+			<label>To make up for any academic loses</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+			<input type="checkbox" ng-model="offense.completion_required" name="completion_required" ng-disabled="controls.ok.btn">
+			<label>To be admitted only after completion of what is required</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+			<input type="checkbox" ng-model="offense.dropped" name="dropped" ng-disabled="controls.ok.btn">
+			<label>To be dropped for incurring equivalent to 20% of total number of lecture/laboratory hours</label>
+		</div>
+	</div><div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12 form-group">
+			<input type="checkbox" ng-model="offense.parent_notification" name="parent_notification" ng-disabled="controls.ok.btn">
+			<label>To send parent's notification for parent's conference</label>
+		</div>
+	</div>
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12 form-group">
 			<input type="checkbox" ng-model="offense.recom_others_cb" ng-disabled="controls.ok.btn">
