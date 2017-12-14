@@ -12,9 +12,9 @@
 	<br>
 	<div class="row">
 		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-			<label>Name</label>
-			<input type="text" class="form-control" name="student_no" ng-model="offense.student_no" disabled uib-typeahead="s.fullname for s in students | filter:{fullname:$viewValue}" typeahead-min-length="2" typeahead-on-select="form.fullnameSelect($item, this)">
-			
+			<h2>ID Number: <b>{{offense.student_no.id_number}}</b></h2>
+			<h2>Name: <b>{{offense.student_no.lastname}}, {{offense.student_no.firstname}} {{offense.student_no.middlename}}</b></h2>
+			<h2>Remarks: <input type="checkbox" name="done" ng-model="offense.done" ng-disabled="controls.ok.btn"> <b ng-show="offense.done">Done</b></h2>
 		</div>
 		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
 		</div>
@@ -25,7 +25,7 @@
 		</div>
 	</div>
 	<hr>
-	<div class="col-lg-7">
+	<div class="col-lg-8">
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<label>Recommendations</label>
@@ -74,7 +74,7 @@
 	</div><div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12 form-group">
 			<input type="checkbox" ng-model="offense.parent_notification" name="parent_notification" ng-disabled="controls.ok.btn">
-			<label>To send parent's notification for parent's conference</label>
+			<label>To sent parent's notification for parent's conference</label>
 		</div>
 	</div>
 	<div class="row">
@@ -88,13 +88,37 @@
 			<input type="text" class="form-control" ng-disabled="controls.ok.btn" ng-show="offense.recom_others_cb" ng-model="offense.recom_others" placeholder="Type here">
 		</div>
 	</div>
-	</div>
-	</form>
+	<div class="row">
 		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
 			<button class="btn btn-default" type="submit" ng-click="form.list(this)" ng-disabled="controls.cancel.btn">{{controls.cancel.label}}</button>
 			<button class="btn btn-info" type="submit" ng-click="form.save(this)" ng-disabled="controls.ok.btn">{{controls.ok.label}}</button>
 		</div>
 	</div>
+	</div>
+	<div class="col-lg-4">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+		<label>Equivalent Community Service</label>
+			<br>
+			<select class="form-control" ng-model="offense.com_service" ng-disabled="controls.ok.btn">
+				<option value="10 minutes">10 minutes</option>
+				<option value="15 minutes">15 minutes</option>
+				<option value="20 minutes">20 minutes</option>
+				<option value="25 minutes">25 minutes</option>
+				<option value="30 minutes">30 minutes</option>
+				<option value="35 minutes">35 minutes</option>
+				<option value="40 minutes">40 minutes</option>
+				<option value="45 minutes">45 minutes</option>
+				<option value="50 minutes">50 minutes</option>
+				<option value="55 minutes">55 minutes</option>
+				<option value="1 hour">1 hour</option>
+				<option value="2 hours">2 hours</option>
+				<option value="3 hours">3 hours</option>
+			</select>
+		</div>
+	</div>
+	</form>
+	</div>
 </div>
+
 
 <!-- end form for subject information -->

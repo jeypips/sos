@@ -67,7 +67,7 @@
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>General</h3>
+                <h3>Navigation</h3>
                 <ul class="nav side-menu">
                   <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
 				  <li><a href="students.php"><i class="fa fa-user"></i> Students</a></li>
@@ -198,6 +198,7 @@
     <script src="modules/fullscreen.js"></script>
     <script src="modules/bootstrap-modal.js"></script>
     <script src="modules/account.js"></script>
+    <script src="modules/snapshot.js"></script>
     <script src="modules/growl.js"></script>
     <script src="modules/students.js"></script>
     <script src="controllers/students.js"></script>

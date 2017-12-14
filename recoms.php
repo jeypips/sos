@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Recommendation | Offline Student System</title>
+    <title>Recommendations | Offline Student System</title>
 	
 	<link rel="icon" type="image/ico" href="pictures/logo.jpg">
 	
@@ -75,7 +75,7 @@ input[type="checkbox"]{
             <!-- sidebar menu -->
             <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
               <div class="menu_section">
-                <h3>General</h3>
+                <h3>Navigation</h3>
                 <ul class="nav side-menu">
                   <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
 				  <li><a href="students.php"><i class="fa fa-user"></i> Students</a></li>
