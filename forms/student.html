@@ -11,33 +11,39 @@
 	<form name="formHolder.student" id="formHolder.student" novalidate autocomplete="off">
 	<br>
 	<div class="row">
-		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-			<label>Id Number</label>
-			<input type="text" class="form-control" name="id_number" ng-model="student.id_number" ng-disabled="controls.ok.btn">
-		</div>
-		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-		</div>
-		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-			<label>Date</label>
-			<input type="date" class="form-control" name="date" ng-model="student.date" ng-disabled="controls.ok.btn">
-		</div>
-	</div>
-	<br>
-	<div class="row">
-		<div class="col-md-4 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.lastname.$touched && formHolder.student.lastname.$invalid}">
-			<label>Last Name</label>
-			<input type="text" class="form-control" name="lastname" ng-model="student.lastname" required ng-disabled="controls.ok.btn">
-			<span class="help-block" ng-show="formHolder.student.lastname.$touched && formHolder.student.lastname.$invalid">Last name is required</span>
-		</div>
-		<div class="col-md-4 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.firstname.$touched && formHolder.student.firstname.$invalid}">
-			<label>First Name</label>
-			<input type="text" class="form-control" name="firstname" ng-model="student.firstname" required ng-disabled="controls.ok.btn"> 
-			<span class="help-block" ng-show="formHolder.student.firstname.$touched && formHolder.student.firstname.$invalid">First name is required</span>
-		</div>
-		<div class="col-md-4 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.middlename.$touched && formHolder.student.middlename.$invalid}">
-			<label>Middle Name</label>
-			<input type="text" class="form-control" name="middlename" ng-model="student.middlename" required ng-disabled="controls.ok.btn"> 
-		<span class="help-block" ng-show="formHolder.student.middlename.$touched && formHolder.student.middlename.$invalid">Middle name is required</span>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="row">
+				<label style="margin-left: 13px;"> Student Photo</label>
+			</div>
+			<div class="col-lg-2 form-group">
+				  <img style="cursor: pointer;" ng-click="snapshot.start(this,'front')" data-toggle="tooltip" data-placement="bottom" title="Front photo" class="img-responsive" id="front_picture" src="pictures/avatar.png" alt="Photo">
+				  <h5 align="center">Front Photo</h5>
+			</div>
+			<div class="col-lg-3 col-sm-12 col-xs-12 form-group">
+				<label>Id Number</label>
+				<input type="text" class="form-control" name="id_number" ng-model="student.id_number" ng-disabled="controls.ok.btn">
+			</div>
+			<div class="col-md-3 col-sm-12 col-xs-12 form-group">
+			</div>
+			<div class="col-md-3 col-sm-12 col-xs-12 form-group">
+				<label>Date</label>
+				<input type="date" class="form-control" name="date" ng-model="student.date" ng-disabled="controls.ok.btn">
+			</div>
+			<div class="col-md-3 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.lastname.$touched && formHolder.student.lastname.$invalid}">
+				<label>Last Name</label>
+				<input type="text" class="form-control" name="lastname" ng-model="student.lastname" required ng-disabled="controls.ok.btn">
+				<span class="help-block" ng-show="formHolder.student.lastname.$touched && formHolder.student.lastname.$invalid">Last name is required</span>
+			</div>
+			<div class="col-md-3 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.firstname.$touched && formHolder.student.firstname.$invalid}">
+				<label>First Name</label>
+				<input type="text" class="form-control" name="firstname" ng-model="student.firstname" required ng-disabled="controls.ok.btn"> 
+				<span class="help-block" ng-show="formHolder.student.firstname.$touched && formHolder.student.firstname.$invalid">First name is required</span>
+			</div>
+			<div class="col-md-3 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.middlename.$touched && formHolder.student.middlename.$invalid}">
+				<label>Middle Name</label>
+				<input type="text" class="form-control" name="middlename" ng-model="student.middlename" required ng-disabled="controls.ok.btn"> 
+				<span class="help-block" ng-show="formHolder.student.middlename.$touched && formHolder.student.middlename.$invalid">Middle name is required</span>
+			</div>
 		</div>
 	</div>
 	<hr>
@@ -86,6 +92,8 @@
 				<select class="form-control" ng-model="student.course" ng-disabled="controls.ok.btn">
 					<option value="Bachelor of Science in Information Technology">Bachelor of Science in Information Technology</option>
 					<option value="Computer Hardware Services">Computer Hardware Services</option>
+					<option value="1st year Hotel and Restaurant Management">1st year Hotel and Restaurant Management</option>
+					<option value="2nd year Hotel and Restaurant Management">2nd year Hotel and Restaurant Management</option>
 					<option value="Bachelor of Science in Hotel and Restaurant Management">Bachelor of Science in Hotel and Restaurant Management</option>
 				</select>
 			</div>

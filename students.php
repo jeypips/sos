@@ -72,6 +72,7 @@
                   <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
 				  <li><a href="students.php"><i class="fa fa-user"></i> Students</a></li>
 				  <li><a href="offenses.php"><i class="fa fa-list-ol"></i> Offenses</a></li>
+				  <li><a href="recoms.php"><i class="fa fa-book"></i> Recommendations</a></li>
                 </ul>   
               </div>
 
@@ -197,6 +198,7 @@
     <script src="modules/fullscreen.js"></script>
     <script src="modules/bootstrap-modal.js"></script>
     <script src="modules/account.js"></script>
+    <script src="modules/snapshot.js"></script>
     <script src="modules/growl.js"></script>
     <script src="modules/students.js"></script>
     <script src="controllers/students.js"></script>

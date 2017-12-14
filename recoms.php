@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Offenses | Offline Student System</title>
+    <title>Recommendations | Offline Student System</title>
 	
 	<link rel="icon" type="image/ico" href="pictures/logo.jpg">
 	
@@ -199,7 +199,7 @@ input[type="checkbox"]{
     <script src="modules/bootstrap-modal.js"></script>
     <script src="modules/account.js"></script>
     <script src="modules/growl.js"></script>
-    <script src="modules/offenses.js"></script>
-    <script src="controllers/offenses.js"></script>
+    <script src="modules/recoms.js"></script>
+    <script src="controllers/recoms.js"></script>
   </body>
 </html>

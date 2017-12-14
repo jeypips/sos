@@ -1,4 +1,4 @@
-angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-module']).factory('form', function($compile,$timeout,$http,bootstrapModal,growl,snapshot) {
+angular.module('offenses-module',['ui.bootstrap','bootstrap-modal','bootstrap-growl']).factory('form', function($compile,$timeout,$http,bootstrapModal,growl) {
 	
 	function form() {
 		
@@ -9,12 +9,6 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-
 		self.data = function(scope) { // initialize data			
 			
 			// scope.mode = null;
-			
-			scope.snapshot = snapshot;
-			
-			scope.pictures = {
-				front: null
-			};
 			
 			scope.controls = {
 				ok: {
@@ -27,15 +21,26 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-
 				},
 			};
 				
-			scope.student = {};
-			scope.student.student_id = 0;
+			scope.offense = {};
+			scope.offense.offense_id = 0;
 	
-			scope.students = []; // list
+			scope.offenses = []; // list
+			
+			$http({
+				method: 'POST',
+				url: 'api/suggestions/students.php'
+			}).then(function mySucces(response) {
+				
+				scope.students = response.data;
+				
+			},function myError(response) {
+				
+			});
 		};
 
 		function validate(scope) {
 			
-			var controls = scope.formHolder.student.$$controls;
+			var controls = scope.formHolder.offense.$$controls;
 			
 			angular.forEach(controls,function(elem,i) {
 				
@@ -43,7 +48,7 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-
 									
 			});
 
-			return scope.formHolder.student.$invalid;
+			return scope.formHolder.offense.$invalid;
 			
 		};
 		
@@ -63,15 +68,15 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-
 			
 		};
 
-		self.student = function(scope,row) {	
+		self.offense = function(scope,row) {	
 		
-			scope.student = {};
-			scope.student.student_id = 0;
+			scope.offense = {};
+			scope.offense.offense_id = 0;
 			
 			mode(scope,row);
 			
 			$('#x_content').html(loading);
-			$('#x_content').load('forms/student.html',function() {
+			$('#x_content').load('forms/recom.html',function() {
 				$timeout(function() { $compile($('#x_content')[0])(scope); },200);
 			});
 			
@@ -80,18 +85,12 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-
 				if (scope.$id > 2) scope = scope.$parent;				
 				$http({
 				  method: 'POST',
-				  url: 'handlers/student-view.php',
-				  data: {student_id: row.student_id}
+				  url: 'handlers/offense-view.php',
+				  data: {offense_id: row.offense_id}
 				}).then(function mySucces(response) {
 					
-					angular.copy(response.data, scope.student);
-					scope.student.date = new Date(response.data.date);
-					angular.forEach(scope.pictures, function(item,i) { console.log(i);
-						var photo = 'pictures/'+scope.student.student_id+'_'+i+'.png';
-						var view = document.getElementById(i+'_picture');
-						if (imageExists(photo)) view.setAttribute('src', photo);
-						else view.setAttribute('src', 'pictures/avatar.png');
-					});
+					angular.copy(response.data, scope.offense);
+					scope.offense.recom_date = new Date(response.data.recom_date);
 					
 				}, function myError(response) {
 					 
@@ -119,17 +118,17 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-
 			
 			$http({
 			  method: 'POST',
-			  url: 'handlers/student-save.php',
-			  data: {student: scope.student}
+			  url: 'handlers/recom-save.php',
+			  data: {offense: scope.offense}
 			}).then(function mySucces(response) {
 				
-				if (scope.student.student_id == 0) {
-					scope.student.student_id = response.data;
+				if (scope.offense.offense_id == 0) {
+					scope.offense.offense_id = response.data;
 					growl.show('alert alert-success alert-dismissible fade in',{from: 'top', amount: 55},'Basic Information successfully added.');
 					}	else{
 						growl.show('alert alert-success alert-dismissible fade in',{from: 'top', amount: 55},'Basic Information successfully updated.');
 					}
-					mode(scope,scope.student);
+					mode(scope,scope.offense);
 				
 			}, function myError(response) {
 				 
@@ -147,8 +146,8 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-
 			
 			$http({
 			  method: 'POST',
-			  url: 'handlers/student-delete.php',
-			  data: {student_id: [row.student_id]}
+			  url: 'handlers/offense-delete.php',
+			  data: {offense_id: [row.offense_id]}
 			}).then(function mySucces(response) {
 
 				self.list(scope);
@@ -169,15 +168,15 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-
 		
 		self.list = function(scope) {
 			
-			scope.student = {};
-			scope.student.student_id = 0;			
+			scope.offense = {};
+			scope.offense.offense_id = 0;			
 			$http({
 			  method: 'POST',
-			  url: 'handlers/student-list.php',
+			  url: 'handlers/offense-list.php',
 			}).then(function mySucces(response) {
 				
-				scope.students = response.data;
-				console.log(scope.students);
+				scope.offenses = response.data;
+				console.log(scope.offenses);
 				
 			}, function myError(response) {
 				 
@@ -185,13 +184,12 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-
 				
 			});
 			
-			
 			$('#x_content').html(loading);
-			$('#x_content').load('lists/students.html', function() {
+			$('#x_content').load('lists/recoms.html', function() {
 				$timeout(function() { $compile($('#x_content')[0])(scope); },100);								
 				// instantiate datable
 				$timeout(function() {
-					$('#student').DataTable({
+					$('#offense').DataTable({
 						"ordering": false
 					});	
 				},200);
@@ -200,15 +198,10 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-
 			
 		};
 		
-		function imageExists(image_url){
-
-			var http = new XMLHttpRequest();
-
-			http.open('HEAD', image_url, false);
-			http.send();
-
-			return http.status != 404;
-
+		self.fullnameSelect = function($item, scope) {
+			
+			scope.offense.student_no = $item;
+			
 		};
 		
 	};

@@ -22,6 +22,7 @@ $offense[0]['academic_loses'] = ($offense[0]['academic_loses'])?true:false;
 $offense[0]['completion_required'] = ($offense[0]['completion_required'])?true:false;
 $offense[0]['dropped'] = ($offense[0]['dropped'])?true:false;
 $offense[0]['parent_notification'] = ($offense[0]['parent_notification'])?true:false;
+$offense[0]['done'] = ($offense[0]['done'])?true:false;
 $offense[0]['student_no'] = $student[0];
 
 header("Content-Type: application/json");
