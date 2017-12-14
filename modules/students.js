@@ -130,7 +130,7 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-
 						growl.show('alert alert-success alert-dismissible fade in',{from: 'top', amount: 55},'Basic Information successfully updated.');
 					}
 					mode(scope,scope.student);
-				
+					snapshot.upload(scope);
 			}, function myError(response) {
 				 
 			  // error
