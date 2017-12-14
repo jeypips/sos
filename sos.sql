@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 13, 2017 at 08:28 AM
+-- Generation Time: Dec 13, 2017 at 05:56 AM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -58,10 +58,23 @@ CREATE TABLE `offenses` (
   `check_others` tinyint(4) NOT NULL DEFAULT '0',
   `others` varchar(550) DEFAULT NULL,
   `offs_date` date DEFAULT NULL,
-  `recommendation` varchar(550) DEFAULT NULL,
+  `admitted_excuse` varchar(550) DEFAULT NULL,
+  `admitted_notexcuse` varchar(550) DEFAULT NULL,
+  `academic_loses` varchar(550) DEFAULT NULL,
+  `completion_required` varchar(550) DEFAULT NULL,
+  `dropped` varchar(550) DEFAULT NULL,
+  `parent_notification` varchar(550) DEFAULT NULL,
   `recom_others_cb` tinyint(4) NOT NULL DEFAULT '0',
   `recom_others` varchar(550) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `offenses`
+--
+
+INSERT INTO `offenses` (`offense_id`, `student_no`, `recom_no`, `inc_uniform`, `late_tardy`, `absent`, `no_id`, `cutting_classes`, `check_others`, `others`, `offs_date`, `admitted_excuse`, `admitted_notexcuse`, `academic_loses`, `completion_required`, `dropped`, `parent_notification`, `recom_others_cb`, `recom_others`) VALUES
+(1, '3', NULL, 1, 0, 0, 0, 0, 0, NULL, '2017-12-12', '0', '0', '0', '0', '0', '0', 1, 'a'),
+(2, '3', NULL, 1, 0, 0, 0, 0, 0, NULL, '2017-12-12', '0', '0', '0', '0', '0', '0', 1, 'aa');
 
 -- --------------------------------------------------------
 
@@ -128,7 +141,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `offenses`
 --
 ALTER TABLE `offenses`
-  MODIFY `offense_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `offense_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `students`
 --
