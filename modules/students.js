@@ -1,4 +1,4 @@
-angular.module('students-module',['bootstrap-modal','bootstrap-growl']).factory('form', function($compile,$timeout,$http,bootstrapModal,growl) {
+angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-module']).factory('form', function($compile,$timeout,$http,bootstrapModal,growl,snapshot) {
 	
 	function form() {
 		
@@ -9,6 +9,12 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl']).factory(
 		self.data = function(scope) { // initialize data			
 			
 			// scope.mode = null;
+			
+			scope.snapshot = snapshot;
+			
+			scope.pictures = {
+				front: null
+			};
 			
 			scope.controls = {
 				ok: {
@@ -80,6 +86,12 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl']).factory(
 					
 					angular.copy(response.data, scope.student);
 					scope.student.date = new Date(response.data.date);
+					angular.forEach(scope.pictures, function(item,i) { console.log(i);
+						var photo = 'pictures/'+scope.student.student_id+'_'+i+'.png';
+						var view = document.getElementById(i+'_picture');
+						if (imageExists(photo)) view.setAttribute('src', photo);
+						else view.setAttribute('src', 'pictures/avatar.png');
+					});
 					
 				}, function myError(response) {
 					 
@@ -186,6 +198,17 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl']).factory(
 				
 			});				
 			
+		};
+		
+		function imageExists(image_url){
+
+			var http = new XMLHttpRequest();
+
+			http.open('HEAD', image_url, false);
+			http.send();
+
+			return http.status != 404;
+
 		};
 		
 	};

@@ -11,6 +11,18 @@
 	<form name="formHolder.student" id="formHolder.student" novalidate autocomplete="off">
 	<br>
 	<div class="row">
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="row">
+				<label style="margin-left: 13px;"> Student Photo</label>
+			</div>
+			<div class="col-sm-4 form-group">
+				  <img style="cursor: pointer;" ng-click="snapshot.start(this,'front')" data-toggle="tooltip" data-placement="bottom" title="Front photo" class="img-responsive" id="front_picture" src="pictures/avatar.png" alt="Photo">
+				  <h5 class="pull-left">Front Photo</h5>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
 		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
 			<label>Id Number</label>
 			<input type="text" class="form-control" name="id_number" ng-model="student.id_number" ng-disabled="controls.ok.btn">
@@ -86,6 +98,8 @@
 				<select class="form-control" ng-model="student.course" ng-disabled="controls.ok.btn">
 					<option value="Bachelor of Science in Information Technology">Bachelor of Science in Information Technology</option>
 					<option value="Computer Hardware Services">Computer Hardware Services</option>
+					<option value="1st year Hotel and Restaurant Management">1st year Hotel and Restaurant Management</option>
+					<option value="2nd year Hotel and Restaurant Management">2nd year Hotel and Restaurant Management</option>
 					<option value="Bachelor of Science in Hotel and Restaurant Management">Bachelor of Science in Hotel and Restaurant Management</option>
 				</select>
 			</div>

@@ -198,6 +198,7 @@
     <script src="modules/fullscreen.js"></script>
     <script src="modules/bootstrap-modal.js"></script>
     <script src="modules/account.js"></script>
+    <script src="modules/snapshot.js"></script>
     <script src="modules/growl.js"></script>
     <script src="modules/students.js"></script>
     <script src="controllers/students.js"></script>
