@@ -12,9 +12,9 @@
 	<br>
 	<div class="row">
 		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-			<h2>ID Number: <b>{{offense.student_no.id_number}}</b></h2>
-			<h2>Name: <b>{{offense.student_no.lastname}}, {{offense.student_no.firstname}} {{offense.student_no.middlename}}</b></h2>
-			<h2>Remarks: <input type="checkbox" name="done" ng-model="offense.done" ng-disabled="controls.ok.btn"> <b ng-show="offense.done">Done</b></h2>
+			<h4>ID Number: <b>{{offense.student_no.id_number}}</b></h4>
+			<h4>Name: <b>{{offense.student_no.lastname}}, {{offense.student_no.firstname}} {{offense.student_no.middlename}}</b></h4>
+			<h4>Remarks: <input type="checkbox" name="done" ng-model="offense.done" ng-disabled="controls.ok.btn"> <b ng-show="offense.done" class="text-success" style="font-style: italic;">Done</b></h4>
 		</div>
 		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
 		</div>
