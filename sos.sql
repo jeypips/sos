@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 14, 2017 at 10:41 AM
+-- Generation Time: Dec 13, 2017 at 05:56 AM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -65,19 +65,16 @@ CREATE TABLE `offenses` (
   `dropped` varchar(550) DEFAULT NULL,
   `parent_notification` varchar(550) DEFAULT NULL,
   `recom_others_cb` tinyint(4) NOT NULL DEFAULT '0',
-  `recom_others` varchar(550) DEFAULT NULL,
-  `recom_date` date DEFAULT NULL,
-  `com_service` varchar(200) DEFAULT NULL,
-  `done` tinyint(4) NOT NULL DEFAULT '0'
+  `recom_others` varchar(550) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `offenses`
 --
 
-INSERT INTO `offenses` (`offense_id`, `student_no`, `recom_no`, `inc_uniform`, `late_tardy`, `absent`, `no_id`, `cutting_classes`, `check_others`, `others`, `offs_date`, `admitted_excuse`, `admitted_notexcuse`, `academic_loses`, `completion_required`, `dropped`, `parent_notification`, `recom_others_cb`, `recom_others`, `recom_date`, `com_service`, `done`) VALUES
-(1, '1', NULL, 1, 0, 1, 0, 0, 0, '', '2017-12-02', '1', '0', '0', '0', '0', '0', 0, '', '2017-12-13', '10 minutes', 1),
-(2, '2', NULL, 0, 1, 0, 0, 0, 0, NULL, '2017-12-13', '1', '0', '0', '0', '0', '0', 0, NULL, '2017-12-13', '3 hour', 1);
+INSERT INTO `offenses` (`offense_id`, `student_no`, `recom_no`, `inc_uniform`, `late_tardy`, `absent`, `no_id`, `cutting_classes`, `check_others`, `others`, `offs_date`, `admitted_excuse`, `admitted_notexcuse`, `academic_loses`, `completion_required`, `dropped`, `parent_notification`, `recom_others_cb`, `recom_others`) VALUES
+(1, '3', NULL, 1, 0, 0, 0, 0, 0, NULL, '2017-12-12', '0', '0', '0', '0', '0', '0', 1, 'a'),
+(2, '3', NULL, 1, 0, 0, 0, 0, 0, NULL, '2017-12-12', '0', '0', '0', '0', '0', '0', 1, 'aa');
 
 -- --------------------------------------------------------
 
@@ -149,7 +146,7 @@ ALTER TABLE `offenses`
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
