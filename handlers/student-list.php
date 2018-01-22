@@ -8,7 +8,7 @@ session_start();
 
 $con = new pdo_db();
 
-$students = $con->getData("SELECT *, MAX(student_id) student_id FROM students");
+$students = $con->getData("SELECT * FROM students");
 
 header("Content-Type: application/json");
 echo json_encode($students);

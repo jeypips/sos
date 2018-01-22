@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Dec 14, 2017 at 10:41 AM
+-- Generation Time: Jan 22, 2018 at 08:32 AM
 -- Server version: 5.7.11
 -- PHP Version: 7.0.3
 
@@ -76,8 +76,9 @@ CREATE TABLE `offenses` (
 --
 
 INSERT INTO `offenses` (`offense_id`, `student_no`, `recom_no`, `inc_uniform`, `late_tardy`, `absent`, `no_id`, `cutting_classes`, `check_others`, `others`, `offs_date`, `admitted_excuse`, `admitted_notexcuse`, `academic_loses`, `completion_required`, `dropped`, `parent_notification`, `recom_others_cb`, `recom_others`, `recom_date`, `com_service`, `done`) VALUES
-(1, '1', NULL, 1, 0, 1, 0, 0, 0, '', '2017-12-02', '1', '0', '0', '0', '0', '0', 0, '', '2017-12-13', '10 minutes', 1),
-(2, '2', NULL, 0, 1, 0, 0, 0, 0, NULL, '2017-12-13', '1', '0', '0', '0', '0', '0', 0, NULL, '2017-12-13', '3 hour', 1);
+(1, '1', NULL, 1, 0, 1, 0, 0, 0, '', '2017-12-02', '1', '0', '0', '0', '0', '0', 0, '', '2017-12-06', '3 hours', 1),
+(2, '2', NULL, 0, 1, 0, 0, 0, 0, NULL, '2017-12-13', '1', '0', '0', '0', '0', '0', 0, NULL, '2017-12-13', '2 hours', 1),
+(3, '4', NULL, 0, 0, 1, 0, 0, 0, NULL, '2017-12-18', '1', '0', '0', '0', '0', '0', 0, NULL, '2017-12-18', '10 minutes', 0);
 
 -- --------------------------------------------------------
 
@@ -104,10 +105,11 @@ CREATE TABLE `students` (
 --
 
 INSERT INTO `students` (`student_id`, `id_number`, `firstname`, `lastname`, `middlename`, `educational_level`, `grade`, `section`, `year`, `course`, `date`) VALUES
-(1, 10025, 'John Paul', 'Balanon', 'Garcia', 'College', NULL, NULL, '4th', 'Bachelor of Science in Information Technology', '2017-12-07'),
+(1, 10025, 'John Paul', 'Balanon', 'Garcia', 'College', NULL, NULL, '4th', 'BSIT', '2017-12-07'),
 (2, 10026, 'Dexter', 'Florendo', 'Rivera', 'Senior High School', 11, 'Artemis', NULL, NULL, '2017-12-08'),
-(3, 10027, 'Therosha', 'Ballesteros', 'Iglesias', 'College', NULL, NULL, '3rd', 'Computer Hardware Services', '2017-12-11'),
-(5, 10205, 'Jorima', 'Bernabe', 'Zamoranos', 'College', NULL, NULL, '5th', 'Bachelor of Science in Information Technology', '2017-12-12');
+(3, 10027, 'Therosha', 'Ballesteros', 'Iglesias', 'College', NULL, NULL, '3rd', '1 year HRM', '2017-12-11'),
+(4, 10205, 'Jorima', 'Bernabe', 'Zamoranos', 'College', NULL, NULL, '5th', 'BSIT', '2017-12-12'),
+(5, 10025, 'John', 'Doe', 'Calibur', 'Junior High School', 11, 'Artemis', NULL, NULL, '2018-01-09');
 
 --
 -- Indexes for dumped tables
@@ -144,12 +146,12 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `offenses`
 --
 ALTER TABLE `offenses`
-  MODIFY `offense_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `offense_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `students`
 --
 ALTER TABLE `students`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

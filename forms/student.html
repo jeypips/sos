@@ -25,9 +25,10 @@
 			</div>
 			<div class="col-md-3 col-sm-12 col-xs-12 form-group">
 			</div>
-			<div class="col-md-3 col-sm-12 col-xs-12 form-group">
+			<div class="col-md-3 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.date.$touched && formHolder.student.date.$invalid}">
 				<label>Date</label>
-				<input type="date" class="form-control" name="date" ng-model="student.date" ng-disabled="controls.ok.btn">
+				<input type="date" class="form-control" name="date" ng-model="student.date" ng-disabled="controls.ok.btn" required>
+				<span class="help-block" ng-show="formHolder.student.date.$touched && formHolder.student.date.$invalid">Date is required</span>
 			</div>
 			<div class="col-md-3 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.lastname.$touched && formHolder.student.lastname.$invalid}">
 				<label>Last Name</label>
@@ -51,18 +52,24 @@
 		<div class="col-md-4 col-sm-12 col-xs-12">
 			<label>Educational Level</label>
 			<select class="form-control" ng-model="student.educational_level" ng-disabled="controls.ok.btn">
+				<option value="Junior High School">Junior High School</option>
 				<option value="Senior High School">Senior High School</option>
 				<option value="College">College</option>
 			</select>
 		</div>
-		<div ng-show="student.educational_level=='Senior High School'">
+		<div ng-show="student.educational_level=='Senior High School' || student.educational_level=='Junior High School'">
 			<div class="col-md-4 col-sm-12 col-xs-12 form-group">
 				<label>Year</label>
-				<input type="text" class="form-control" name="year" ng-model="student.grade" ng-disabled="controls.ok.btn"> 
+				<select class="form-control" ng-model="student.grade" ng-disabled="controls.ok.btn">
+				<option value="-">-</option>
+					<option value="11">11</option>
+					<option value="12">12</option>
+				</select>
 			</div>
 			<div class="col-md-4 col-sm-12 col-xs-12">
 				<label>Section</label>
 				<select class="form-control" ng-model="student.section" ng-disabled="controls.ok.btn">
+					<option ng-show="student.grade=='11'" value="-">-</option>
 					<option ng-show="student.grade=='11'" value="Artemis">Artemis</option>
 					<option ng-show="student.grade=='11'" value="Hemera">Hemera</option>
 					<option ng-show="student.grade=='11'" value="Eros">Eros</option>
@@ -71,6 +78,7 @@
 					<option ng-show="student.grade=='11'" value="Themis">Themis</option>
 					<option ng-show="student.grade=='11'" value="Nyx">Nyx</option>
 					<option ng-show="student.grade=='11'" value="Apollo">Apollo</option>
+					<option ng-show="student.grade=='12'" value="-">-</option>
 					<option ng-show="student.grade=='12'" value="Menerva">Menerva</option>
 					<option ng-show="student.grade=='12'" value="Persephone">Persephone</option>
 					<option ng-show="student.grade=='12'" value="Hades">Hades</option>
@@ -90,6 +98,7 @@
 			<div class="col-md-4 col-sm-12 col-xs-12 form-group">
 				<label>Course</label>
 				<select class="form-control" ng-model="student.course" ng-disabled="controls.ok.btn">
+					<option value="-">-</option>
 					<option value="BSIT">Bachelor of Science in Information Technology</option>
 					<option value="CHS">Computer Hardware Services</option>
 					<option value="1 year HRM">1 year Hotel and Restaurant Management</option>
