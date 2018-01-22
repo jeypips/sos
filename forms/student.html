@@ -59,9 +59,9 @@
 		</div>
 		<div ng-show="student.educational_level=='Senior High School' || student.educational_level=='Junior High School'">
 			<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-				<label>Year</label>
+				<label>Grade</label>
 				<select class="form-control" ng-model="student.grade" ng-disabled="controls.ok.btn">
-				<option value="-">-</option>
+					<option value="-">-</option>
 					<option value="11">11</option>
 					<option value="12">12</option>
 				</select>
