@@ -49,7 +49,7 @@
 	</div>
 	<hr>
 	<div class="row">
-		<div class="col-md-4 col-sm-12 col-xs-12">
+		<div class="col-md-3 col-sm-12 col-xs-12">
 			<label>Educational Level</label>
 			<select class="form-control" ng-model="student.educational_level" ng-disabled="controls.ok.btn">
 				<option value="Junior High School">Junior High School</option>
@@ -57,19 +57,44 @@
 				<option value="College">College</option>
 			</select>
 		</div>
-		<div ng-show="student.educational_level=='Senior High School' || student.educational_level=='Junior High School'">
-			<div class="col-md-4 col-sm-12 col-xs-12 form-group">
+			<div class="col-md-4 col-sm-12 col-xs-12 form-group" ng-show="student.educational_level=='Senior High School'">
+				<label>Strand</label>
+				<select class="form-control" ng-model="student.strand" ng-disabled="controls.ok.btn">
+					<option value="ABM">Accounting, Business and Management</option>
+					<option value="GAS">General Academic Strand</option>
+					<option value="HUMMS">Humanities and Social Sciences Strand</option>
+					<option value="Automovie">Automovie</option>
+					<option value="STEM">Science, Technology, Engineering and Mathematics</option>
+					<option value="Programming">Programming</option>
+					<option value="EIM">Electrical Installation and Maintenance</option>
+					<option value="SMAW">Shielded Metal Arc Welding</option>
+					<option value="Cookery">Cookery</option>
+					<option value="B&P">BnPastry</option>
+					<option value="Caregiving">Caregiving</option>
+				</select>
+			</div>
+			<div class="col-md-2 col-sm-12 col-xs-12 form-group" ng-show="student.educational_level=='Senior High School' || student.educational_level=='Junior High School'" >
 				<label>Grade</label>
 				<select class="form-control" ng-model="student.grade" ng-disabled="controls.ok.btn">
 					<option value="-">-</option>
-					<option value="11">11</option>
-					<option value="12">12</option>
+					<option ng-show="student.educational_level=='Junior High School'"value="7">7</option>
+					<option ng-show="student.educational_level=='Junior High School'"value="7" value="8">8</option>
+					<option ng-show="student.educational_level=='Junior High School'"value="7" value="9">9</option>
+					<option ng-show="student.educational_level=='Junior High School'"value="7" value="10">10</option>
+					<option ng-show="student.educational_level=='Senior High School'"value="7" value="11">11</option>
+					<option ng-show="student.educational_level=='Senior High School'"value="7" value="12">12</option>
 				</select>
 			</div>
-			<div class="col-md-4 col-sm-12 col-xs-12">
+			<div class="col-md-2 col-sm-12 col-xs-12" ng-show="student.educational_level=='Senior High School' || student.educational_level=='Junior High School'">
 				<label>Section</label>
 				<select class="form-control" ng-model="student.section" ng-disabled="controls.ok.btn">
 					<option ng-show="student.grade=='11'" value="-">-</option>
+					<option ng-show="student.educational_level=='Junior High School'" value="Venus">Venus</option>
+					<option ng-show="student.educational_level=='Junior High School'" value="Aphrodite">Aphrodite</option>
+					<option ng-show="student.educational_level=='Junior High School'" value="Athena">Athena</option>
+					<option ng-show="student.educational_level=='Junior High School'" value="Ceres">Ceres</option>
+					<option ng-show="student.educational_level=='Junior High School'" value="Hestia">Hestia</option>
+					<option ng-show="student.educational_level=='Junior High School'" value="Hera">Hera</option>
 					<option ng-show="student.grade=='11'" value="Artemis">Artemis</option>
 					<option ng-show="student.grade=='11'" value="Hemera">Hemera</option>
 					<option ng-show="student.grade=='11'" value="Eros">Eros</option>
@@ -88,7 +113,6 @@
 					<option ng-show="student.grade=='12'" value="Vesta">Vesta</option>
 				</select>
 			</div>
-		</div>
 		
 		<div ng-show="student.educational_level=='College'">
 			<div class="col-md-4 col-sm-12 col-xs-12 form-group">

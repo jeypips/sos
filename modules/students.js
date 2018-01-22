@@ -192,7 +192,9 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-
 				// instantiate datable
 				$timeout(function() {
 					$('#student').DataTable({
-						"ordering": false
+						// "ordering": false,
+						"processing": true
+						
 					});	
 				},200);
 				
