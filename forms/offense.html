@@ -2,7 +2,7 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
 	<div class="x_panel">
 		<div class="x_title">
-			<h2><i class="fa fa-user"></i> Offense</h2>
+			<h2><i class="fa fa-book"></i> Offense</h2>
 			<ul class="nav navbar-right panel_toolbox">
 			<button class="btn btn-default" ng-click="form.edit(this)"><i class="fa" ng-class="{'fa-edit': controls.ok.btn, 'fa-ban': !controls.ok.btn}"></i></button>
 			</ul>
@@ -12,14 +12,14 @@
 	<br>
 	<div class="row">
 		<div class="col-md-4 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.offense.student_no.$touched && formHolder.offense.student_no.$invalid}">
-			<label>Name</label>
+			<label>Name <span class="text-danger">*</span></label>
 			<input type="text" class="form-control" name="student_no" ng-model="offense.student_no" required uib-typeahead="s.fullname for s in students | filter:{fullname:$viewValue}" typeahead-min-length="2" typeahead-on-select="form.fullnameSelect($item, this)" ng-disabled="controls.ok.btn">
 			<span class="help-block" ng-show="formHolder.offense.student_no.$touched && formHolder.offense.student_no.$invalid">Name is required</span>
 		</div>
 		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
 		</div>
 		<div class="col-md-4 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.offense.offs_date.$touched && formHolder.offense.offs_date.$invalid}">
-			<label>Date</label>
+			<label>Date <span class="text-danger">*</span></label>
 			<input type="date" class="form-control" name="offs_date" ng-model="offense.offs_date" required ng-disabled="controls.ok.btn">
 			<span class="help-block" ng-show="formHolder.offense.offs_date.$touched && formHolder.offense.offs_date.$invalid">Date is required</span>
 		</div>
@@ -66,35 +66,6 @@
 	<div class="row">
 		<div class="col-lg-10 form-group">
 			<input type="text" class="form-control" placeholder="Type here" ng-disabled="controls.ok.btn" ng-show="offense.check_others" ng-model="offense.others">
-		</div>
-	</div>
-	</div>
-	<div class="col-lg-7">
-	<div class="row">
-		<div class="col-md-12 col-sm-12 col-xs-12">
-			<label>Recommendation</label>
-			<input type="checkbox" ng-model="offense.recommendation" name="recommendation">
-			<!-- <br>
-			<select class="form-control" ng-model="offense.recommendation" ng-disabled="controls.ok.btn">
-				<option value="To be admitted and be excuse">To be admitted and be excuse</option>
-				<option value="To be admitted but NOT excuse">To be admitted but NOT excuse</option>
-				<option value="To make up for any academic losses">To make up for any academic losses</option>
-				<option value="To be admitted any after completion of what is required">To be admitted any after completion of what is required</option>
-				<option value="To be dropped for incurring equivalent to 20% of total number of lecture/laboratory hours">To be dropped for incurring equivalent to 20% of total number of lecture/laboratory hours</option>
-				<option value="To send parent notification for parent's conference">To send parent notification for parent's conference</option>
-			</select> -->
-		</div>
-	</div>
-	<br>
-	<div class="row">
-		<div class="col-md-12 col-sm-12 col-xs-12 form-group">
-			<input type="checkbox" ng-model="offense.recom_others_cb" ng-disabled="controls.ok.btn">
-			<label>Others (please specify)</label>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-lg-12 form-group">
-			<input type="text" class="form-control" ng-disabled="controls.ok.btn" ng-show="offense.recom_others_cb" ng-model="offense.recom_others" placeholder="Type here">
 		</div>
 	</div>
 	</div>

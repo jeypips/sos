@@ -2,7 +2,7 @@
 <div class="col-md-12 col-sm-12 col-xs-12">
 	<div class="x_panel">
 		<div class="x_title">
-			<h2><i class="fa fa-user"></i> Basic Information</h2>
+			<h2><i class="fa fa-book"></i> Basic Information</h2>
 			<ul class="nav navbar-right panel_toolbox">
 			<button class="btn btn-default" ng-click="form.edit(this)"><i class="fa" ng-class="{'fa-edit': controls.ok.btn, 'fa-ban': !controls.ok.btn}"></i></button>
 			</ul>
@@ -11,52 +11,92 @@
 	<form name="formHolder.student" id="formHolder.student" novalidate autocomplete="off">
 	<br>
 	<div class="row">
-		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-			<label>Id Number</label>
-			<input type="text" class="form-control" name="id_number" ng-model="student.id_number" ng-disabled="controls.ok.btn">
-		</div>
-		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-		</div>
-		<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-			<label>Date</label>
-			<input type="date" class="form-control" name="date" ng-model="student.date" ng-disabled="controls.ok.btn">
-		</div>
-	</div>
-	<br>
-	<div class="row">
-		<div class="col-md-4 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.lastname.$touched && formHolder.student.lastname.$invalid}">
-			<label>Last Name</label>
-			<input type="text" class="form-control" name="lastname" ng-model="student.lastname" required ng-disabled="controls.ok.btn">
-			<span class="help-block" ng-show="formHolder.student.lastname.$touched && formHolder.student.lastname.$invalid">Last name is required</span>
-		</div>
-		<div class="col-md-4 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.firstname.$touched && formHolder.student.firstname.$invalid}">
-			<label>First Name</label>
-			<input type="text" class="form-control" name="firstname" ng-model="student.firstname" required ng-disabled="controls.ok.btn"> 
-			<span class="help-block" ng-show="formHolder.student.firstname.$touched && formHolder.student.firstname.$invalid">First name is required</span>
-		</div>
-		<div class="col-md-4 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.middlename.$touched && formHolder.student.middlename.$invalid}">
-			<label>Middle Name</label>
-			<input type="text" class="form-control" name="middlename" ng-model="student.middlename" required ng-disabled="controls.ok.btn"> 
-		<span class="help-block" ng-show="formHolder.student.middlename.$touched && formHolder.student.middlename.$invalid">Middle name is required</span>
+		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+			<div class="row">
+				<label style="margin-left: 13px;"> Student Photo</label>
+			</div>
+			<div class="col-lg-2 form-group">
+				  <img style="cursor: pointer;" ng-click="snapshot.start(this,'front')" data-toggle="tooltip" data-placement="bottom" title="Front photo" class="img-responsive" id="front_picture" src="pictures/avatar.png" alt="Photo">
+				  <h5 align="center">Front Photo</h5>
+			</div>
+			<div class="col-lg-3 col-sm-12 col-xs-12 form-group">
+				<label>Id Number</label>
+				<input type="text" class="form-control" name="id_number" ng-model="student.id_number" ng-disabled="controls.ok.btn">
+			</div>
+			<div class="col-md-3 col-sm-12 col-xs-12 form-group">
+			</div>
+			<div class="col-md-3 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.date.$touched && formHolder.student.date.$invalid}">
+				<label>Date</label>
+				<input type="date" class="form-control" name="date" ng-model="student.date" ng-disabled="controls.ok.btn" required>
+				<span class="help-block" ng-show="formHolder.student.date.$touched && formHolder.student.date.$invalid">Date is required</span>
+			</div>
+			<div class="col-md-3 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.lastname.$touched && formHolder.student.lastname.$invalid}">
+				<label>Last Name</label>
+				<input type="text" class="form-control" name="lastname" ng-model="student.lastname" required ng-disabled="controls.ok.btn">
+				<span class="help-block" ng-show="formHolder.student.lastname.$touched && formHolder.student.lastname.$invalid">Last name is required</span>
+			</div>
+			<div class="col-md-3 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.firstname.$touched && formHolder.student.firstname.$invalid}">
+				<label>First Name</label>
+				<input type="text" class="form-control" name="firstname" ng-model="student.firstname" required ng-disabled="controls.ok.btn"> 
+				<span class="help-block" ng-show="formHolder.student.firstname.$touched && formHolder.student.firstname.$invalid">First name is required</span>
+			</div>
+			<div class="col-md-3 col-sm-12 col-xs-12 form-group" ng-class="{'has-error': formHolder.student.middlename.$touched && formHolder.student.middlename.$invalid}">
+				<label>Middle Name</label>
+				<input type="text" class="form-control" name="middlename" ng-model="student.middlename" required ng-disabled="controls.ok.btn"> 
+				<span class="help-block" ng-show="formHolder.student.middlename.$touched && formHolder.student.middlename.$invalid">Middle name is required</span>
+			</div>
 		</div>
 	</div>
 	<hr>
 	<div class="row">
-		<div class="col-md-4 col-sm-12 col-xs-12">
+		<div class="col-md-3 col-sm-12 col-xs-12">
 			<label>Educational Level</label>
 			<select class="form-control" ng-model="student.educational_level" ng-disabled="controls.ok.btn">
+				<option value="Junior High School">Junior High School</option>
 				<option value="Senior High School">Senior High School</option>
 				<option value="College">College</option>
 			</select>
 		</div>
-		<div ng-show="student.educational_level=='Senior High School'">
-			<div class="col-md-4 col-sm-12 col-xs-12 form-group">
-				<label>Year</label>
-				<input type="text" class="form-control" name="year" ng-model="student.grade" ng-disabled="controls.ok.btn"> 
+			<div class="col-md-4 col-sm-12 col-xs-12 form-group" ng-show="student.educational_level=='Senior High School'">
+				<label>Strand</label>
+				<select class="form-control" ng-model="student.strand" ng-disabled="controls.ok.btn">
+					<option value="ABM">Accounting, Business and Management</option>
+					<option value="GAS">General Academic Strand</option>
+					<option value="HUMMS">Humanities and Social Sciences Strand</option>
+					<option value="Automovie">Automovie</option>
+					<option value="STEM">Science, Technology, Engineering and Mathematics</option>
+					<option value="Programming">Programming</option>
+					<option value="EIM">Electrical Installation and Maintenance</option>
+					<option value="SMAW">Shielded Metal Arc Welding</option>
+					<option value="Cookery">Cookery</option>
+					<option value="B&P">Bread & Pastry</option>
+					<option value="F&B">Food & Bev</option>
+					<option value="Caregiving">Caregiving</option>
+				</select>
 			</div>
-			<div class="col-md-4 col-sm-12 col-xs-12">
+			<div class="col-md-2 col-sm-12 col-xs-12 form-group" ng-show="student.educational_level=='Senior High School' || student.educational_level=='Junior High School'" >
+				<label>Grade</label>
+				<select class="form-control" ng-model="student.grade" ng-disabled="controls.ok.btn">
+					<option value="-">-</option>
+					<option ng-show="student.educational_level=='Junior High School'" value="7">7</option>
+					<option ng-show="student.educational_level=='Junior High School'" value="8">8</option>
+					<option ng-show="student.educational_level=='Junior High School'" value="9">9</option>
+					<option ng-show="student.educational_level=='Junior High School'" value="10">10</option>
+					<option ng-show="student.educational_level=='Senior High School'" value="11">11</option>
+					<option ng-show="student.educational_level=='Senior High School'" value="12">12</option>
+				</select>
+			</div>
+			<div class="col-md-2 col-sm-12 col-xs-12" ng-show="student.educational_level=='Senior High School' || student.educational_level=='Junior High School'">
 				<label>Section</label>
 				<select class="form-control" ng-model="student.section" ng-disabled="controls.ok.btn">
+					<option ng-show="student.educational_level=='Junior High School'" value="-">-</option>
+					<option ng-show="student.educational_level=='Junior High School'" value="Venus">Venus</option>
+					<option ng-show="student.educational_level=='Junior High School'" value="Aphrodite">Aphrodite</option>
+					<option ng-show="student.educational_level=='Junior High School'" value="Athena">Athena</option>
+					<option ng-show="student.educational_level=='Junior High School'" value="Ceres">Ceres</option>
+					<option ng-show="student.educational_level=='Junior High School'" value="Hestia">Hestia</option>
+					<option ng-show="student.educational_level=='Junior High School'" value="Hera">Hera</option>
+					<option ng-show="student.grade=='11'" value="-">-</option>
 					<option ng-show="student.grade=='11'" value="Artemis">Artemis</option>
 					<option ng-show="student.grade=='11'" value="Hemera">Hemera</option>
 					<option ng-show="student.grade=='11'" value="Eros">Eros</option>
@@ -65,6 +105,7 @@
 					<option ng-show="student.grade=='11'" value="Themis">Themis</option>
 					<option ng-show="student.grade=='11'" value="Nyx">Nyx</option>
 					<option ng-show="student.grade=='11'" value="Apollo">Apollo</option>
+					<option ng-show="student.grade=='12'" value="-">-</option>
 					<option ng-show="student.grade=='12'" value="Menerva">Menerva</option>
 					<option ng-show="student.grade=='12'" value="Persephone">Persephone</option>
 					<option ng-show="student.grade=='12'" value="Hades">Hades</option>
@@ -74,7 +115,6 @@
 					<option ng-show="student.grade=='12'" value="Vesta">Vesta</option>
 				</select>
 			</div>
-		</div>
 		
 		<div ng-show="student.educational_level=='College'">
 			<div class="col-md-4 col-sm-12 col-xs-12 form-group">
@@ -84,9 +124,12 @@
 			<div class="col-md-4 col-sm-12 col-xs-12 form-group">
 				<label>Course</label>
 				<select class="form-control" ng-model="student.course" ng-disabled="controls.ok.btn">
-					<option value="Bachelor of Science in Information Technology">Bachelor of Science in Information Technology</option>
-					<option value="Computer Hardware Services">Computer Hardware Services</option>
-					<option value="Bachelor of Science in Hotel and Restaurant Management">Bachelor of Science in Hotel and Restaurant Management</option>
+					<option value="-">-</option>
+					<option value="BSIT">Bachelor of Science in Information Technology</option>
+					<option value="CHS">Computer Hardware Services</option>
+					<option value="1 year HRM">1 year Hotel and Restaurant Management</option>
+					<option value="2 years HRM">2 years Hotel and Restaurant Management</option>
+					<option value="BSHRM">Bachelor of Science in Hotel and Restaurant Management</option>
 				</select>
 			</div>
 		</div>

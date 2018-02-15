@@ -10,7 +10,7 @@ $con = new pdo_db();
 
 $profile = [];
 
-$sql = "SELECT id, fullname FROM admin WHERE id = $_SESSION[id]";
+$sql = "SELECT id, fullname, username FROM admin WHERE id = $_SESSION[id]";
 
 $staff = $con->getData($sql);
 
