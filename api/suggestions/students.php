@@ -9,7 +9,7 @@ session_start();
 
 $con = new pdo_db();
 
-$students = $con->getData("SELECT student_id, CONCAT (lastname,'',',',' ',firstname,' ',middlename) fullname FROM students");
+$students = $con->getData("SELECT student_id, CONCAT (lastname,'',',',' ',firstname,' ',middlename) fullname, firstname FROM students");
 
 header("Content-Type: application/json");
 echo json_encode($students);
