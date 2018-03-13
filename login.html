@@ -44,14 +44,16 @@ if (isset($_SESSION['id'])) header("location: index.php");
                 <input type="text" class="form-control" placeholder="Username" ng-model="account.username" autofocus />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" ng-model="account.password" autofocus />
+                <input type="{{inputType}}" class="form-control" placeholder="Password" ng-model="account.password" autofocus />
               </div>
 			  <div>
 				<span class="col-md-12 col-sm-12 col-xs-12 alert alert-danger alert-dismissible fade in" ng-show="views.incorrect"><i class="fa fa-exclamation-circle"></i> Invalid username or password</span>
 			  </div>
+			  <input class="pull-left" type="checkbox" id="checkbox" ng-model="passwordCheckbox" ng-click="hideShowPassword()"/><span class="pull-left">&nbsp;Show password</span>
 			  <div>
                 <button type="submit" class="btn btn-default">Log in</button>
 			  </div>
+		
 
               <div class="clearfix"></div>
 
@@ -69,5 +71,6 @@ if (isset($_SESSION['id'])) header("location: index.php");
 	<script src="angular/angular.min.js"></script>
     <script src="modules/login.js"></script>
     <script src="controllers/login.js"></script>
+	
   </body>
 </html>
