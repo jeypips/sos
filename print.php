@@ -145,7 +145,6 @@ input[type="checkbox"]{
 							  <select ng-model="filter.educational_level" class="form-control" required>
 								<option value="Junior High School">Junior High School</option>
 								<option value="Senior High School">Senior High School</option>
-								<option value="Junior High School">College</option>
 							  </select>
 						</div>
 						<div class="col-md-3 col-sm-12 col-xs-12">
@@ -188,9 +187,38 @@ input[type="checkbox"]{
 							  <button style="margin-top: 24px;" type="button" ng-click="filterReport(this)" class="btn btn-primary">Go!</button>
 						    </span>
                         </div>
+						
+						<div class="col-md-3 col-sm-12 col-xs-12">
+							  <label>Educational Level</label>
+							  <select ng-model="filterSumCollege.educational_level" class="form-control" required>
+								<option value="College">College</option>
+							  </select>
+						</div>
+						<div class="col-md-3 col-sm-12 col-xs-12">
+							<label>Year</label>
+                            <select ng-model="filterSumCollege.year" class="form-control" required>
+								<option value="1st">1st</option>
+								<option value="2nd">2nd</option>
+								<option value="3rd">3rd</option>
+								<option value="4th">4th</option>
+							</select>
+						</div>
+						<div class="col-md-6 col-sm-12 col-xs-12 input-group">
+							<label>Course</label>
+                            <select class="form-control" ng-model="filterSumCollege.course" ng-disabled="controls.ok.btn">
+								<option value="BSIT">Bachelor of Science in Information Technology</option>
+								<option value="CHS">Computer Hardware Services</option>
+								<option value="1 year HRM">1 year Hotel and Restaurant Management</option>
+								<option value="2 years HRM">2 years Hotel and Restaurant Management</option>
+								<option value="BSHRM">Bachelor of Science in Hotel and Restaurant Management</option>
+							</select>
+                            <span class="input-group-btn">
+							  <button style="margin-top: 24px;" type="button" ng-click="filterSummaryCollege(this)" class="btn btn-primary">Go!</button>
+						    </span>
+                        </div>
                     </div>
 		
-					<div class="x_panel">
+					<!-- <div class="x_panel">
 						<div class="x_title">
 							<h2><i class="fa fa-check"></i> Single Report - High School</h2>
 							<div class="clearfix"></div>
@@ -220,26 +248,11 @@ input[type="checkbox"]{
 						<div class="col-md-3 col-sm-12 col-xs-12">
 							<button style="margin-top: 23px;" type="button" ng-click="filterReportCollege(this)" class="btn btn-primary">Go!</button>
 						</div>
-					</div>
+					</div> -->
 					
-					<div class="x_panel">
-						<div class="x_title">
-							<h2><i class="fa fa-check"></i> Offense Report</h2>
-							<div class="clearfix"></div>
-						</div>
-						<div class="col-md-6 col-sm-12 col-xs-12">
-							<label>ID Number</label>
-								<input type="text" ng-model="filterOffense.offense_id" class="form-control">
-							</select>
-						</div>
-						
-						<div class="col-md-3 col-sm-12 col-xs-12">
-							<button style="margin-top: 23px;" type="button" ng-click="filterReportOffense(this)" class="btn btn-primary">Go!</button>
-						</div>
-					</div>
 					
-				<form id="filterOffense" action="reports/offense.php" method="post" target="_blank">
-					<input type="hidden" name="params" value="{{filterOffense}}">
+				<form id="filterSumCollege" action="reports/sumcollege.php" method="post" target="_blank">
+					<input type="hidden" name="params" value="{{filterSumCollege}}">
 				</form>
 				<form id="filterCollege" action="reports/collegereport.php" method="post" target="_blank">
 					<input type="hidden" name="params" value="{{filterCollege}}">
@@ -349,8 +362,10 @@ input[type="checkbox"]{
 			id_number: ''
 		};
 		
-		$scope.filterOffense = {
-			offense_id: ''
+		$scope.filterSumCollege = {
+			educational_level: 'College',
+			year: '',
+			course: ''
 		};
 		
 		$scope.filterReport = function(scope) {
@@ -368,9 +383,9 @@ input[type="checkbox"]{
 			
 			$('#filterCollege').submit();
 		};
-		$scope.filterReportOffense = function(scope) {
+		$scope.filterSummaryCollege = function(scope) {
 			
-			$('#filterOffense').submit();
+			$('#filterSumCollege').submit();
 		};
 		
 	});

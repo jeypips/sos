@@ -5,6 +5,8 @@
 			<h2><i class="fa fa-book"></i> Recommendations</h2>
 			<ul class="nav navbar-right panel_toolbox">
 			<button class="btn btn-default" ng-click="form.edit(this)"><i class="fa" ng-class="{'fa-edit': controls.ok.btn, 'fa-ban': !controls.ok.btn}"></i></button>
+			<button class="btn btn-info" style="margin-right: 5px;" ng-click="form.print(this,offense);"><i class="glyphicon glyphicon-print"></i></button>		   
+						
 			</ul>
 			<div class="clearfix"></div>
 		</div>
@@ -95,27 +97,6 @@
 			<button class="btn btn-info" type="submit" ng-click="form.save(this)" ng-disabled="controls.ok.btn">{{controls.ok.label}}</button>
 		</div>
 	</div>
-	</div>
-	<div class="col-lg-4">
-		<div class="col-md-12 col-sm-12 col-xs-12">
-		<label>Equivalent Community Service </label>
-			<br>
-			<select class="form-control" ng-model="offense.com_service" ng-disabled="controls.ok.btn">
-				<option value="10 minutes">10 minutes</option>
-				<option value="15 minutes">15 minutes</option>
-				<option value="20 minutes">20 minutes</option>
-				<option value="25 minutes">25 minutes</option>
-				<option value="30 minutes">30 minutes</option>
-				<option value="35 minutes">35 minutes</option>
-				<option value="40 minutes">40 minutes</option>
-				<option value="45 minutes">45 minutes</option>
-				<option value="50 minutes">50 minutes</option>
-				<option value="55 minutes">55 minutes</option>
-				<option value="1 hour">1 hour</option>
-				<option value="2 hours">2 hours</option>
-				<option value="3 hours">3 hours</option>
-			</select>
-		</div>
 	</div>
 	</form>
 	</div>

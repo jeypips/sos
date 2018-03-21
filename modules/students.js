@@ -177,7 +177,6 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-
 			}).then(function mySucces(response) {
 				
 				scope.students = response.data;
-				console.log(scope.students);
 				
 			}, function myError(response) {
 				 
@@ -214,6 +213,97 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-
 
 			return http.status != 404;
 
+		};
+		
+		self.print = function(scope,student) {
+			
+			$http({
+			  method: 'POST',
+			  url: 'handlers/print-student.php',
+			  data: {student_id: student.student_id}
+			}).then(function mySucces(response) {
+				
+				if (scope.student.student_id == 0) {
+				} else {
+				print(scope,response.data);
+				console.log(response.data);
+				}
+			}, function myError(response) {
+				 
+			  // error
+				
+			});
+					
+			
+		};
+		
+		function print(scope,student) {
+		
+		var doc = new jsPDF('p','mm','letter');
+		
+		doc.setFontSize(16)
+		doc.setFont('times');
+		doc.setFontType('normal');
+		//X-axis, Y-axis
+		doc.text(60, 10, 'La Union Colleges of Science and Technology');
+		doc.text(85, 20, 'Student Information');
+		
+		doc.setFontSize(14)
+		doc.setFont('times');
+		doc.setFontType('normal');
+		//X-axis, Y-axis
+		doc.text(20, 30, 'Date added:');
+		doc.text(25, 40, student[0].date);
+		
+		doc.text(20, 50, 'ID number:');
+		doc.text(25, 60, ''+student[0].id_number);
+		
+		doc.text(20, 70, 'Full Name:');
+		doc.text(25, 80, student[0].lastname+','+' '+student[0].firstname+' '+student[0].middlename);
+		
+		doc.text(20, 90, 'Educational Level:');
+		doc.text(25, 100, ''+student[0].educational_level);
+		
+		doc.setLineWidth(.5)
+		doc.line(205, 105, 5, 105); // horizontal line  
+		
+		doc.text(20, 115, 'Junior High School:');
+		
+		doc.text(70, 115, 'Grade');
+		doc.text(70, 125, ''+student[0].grade);
+		
+		doc.text(120, 115, 'Section');
+		doc.text(120, 125, ''+student[0].section);
+		//
+		doc.text(20, 135, 'Senior High School:');
+		
+		doc.text(70, 135, 'Strand');
+		doc.text(70, 145, ''+student[0].strand);
+		
+		doc.text(120, 135, 'Grade');
+		doc.text(120, 145, ''+student[0].senior_grade);
+		
+		doc.text(150, 135, 'Section');
+		doc.text(150, 145, ''+student[0].senior_section);
+		//
+		doc.text(20, 155, 'College:');
+		
+		doc.text(70, 155, 'Year');
+		doc.text(70, 165, ''+student[0].year);
+		
+		doc.text(120, 155, 'Course');
+		doc.text(120, 165, ''+student[0].course);
+			
+		/* var lMargin=30; //left margin in mm
+		var rMargin=5; //right margin in mm
+		var pdfInMM=130;  // width of A4 in mm
+		var lines = doc.splitTextToSize(''+offense[0].dropped+''+offense[0].completion_required, (pdfInMM-lMargin-rMargin));
+		doc.text(lMargin,70,lines); */
+		
+			var blob = doc.output('blob');
+			window.open(URL.createObjectURL(blob));
+		
+		
 		};
 		
 	};

@@ -197,9 +197,12 @@ $footer = array(
 
 $headers = array(
 	array("width"=>20,"column"=>"ID"),
-	array("width"=>20,"column"=>"Date"),
-	array("width"=>50,"column"=>"Community Service")
-	// array("width"=>50,"column"=>"Remarks")
+	array("width"=>35,"column"=>"First Name"),
+	array("width"=>35,"column"=>"Last Name"),
+	array("width"=>40,"column"=>"Educational Level"),
+	array("width"=>30,"column"=>"Date"),
+	array("width"=>30,"column"=>"Community Service"),
+	array("width"=>20,"column"=>"Remarks")
 );
 
 # query here
@@ -208,6 +211,7 @@ $con = new pdo_db();
 
 $operators = array(
 	"offs_date"=>"=",
+	"firstname"=>"=",
 	"com_service"=>"="
 );
 
@@ -221,13 +225,13 @@ foreach ($params as $column => $param) {
 	$i++;
 };
 
-$sql = "SELECT offense_id ,DATE_FORMAT(offs_date, '%M %d, %Y') offs_date, com_service FROM offenses $filter";
+$sql = "SELECT id_number, firstname,lastname,educational_level,DATE_FORMAT(offs_date, '%M %d, %Y') offs_date, com_service, IF(done=1,'Done','') done FROM offenses, students $filter";
 $data = $con->getData($sql);
 
 #
 
 $body = array(
-	"lr_margin"=>5,
+	"lr_margin"=>3,
 	"striped"=>true,
 	"striped_bg"=>function($p) {
 		$p->SetFillColor(223,223,223); # background color		

@@ -197,11 +197,11 @@ $footer = array(
 
 $headers = array(
 	array("width"=>20,"column"=>"ID Number"),
-	array("width"=>40,"column"=>"First Name"),
-	array("width"=>40,"column"=>"Last Name"),
+	array("width"=>50,"column"=>"First Name"),
+	array("width"=>50,"column"=>"Last Name"),
 	array("width"=>50,"column"=>"Educational Level"),
-	array("width"=>20,"column"=>"Grade"),
-	array("width"=>30,"column"=>"Section")
+	array("width"=>15,"column"=>"Year"),
+	array("width"=>20,"column"=>"Course")
 );
 
 # query here
@@ -210,8 +210,8 @@ $con = new pdo_db();
 
 $operators = array(
 	"educational_level"=>"=",
-	"grade"=>"=",
-	"section"=>"="
+	"year"=>"=",
+	"course"=>"="
 );
 
 $filter = "";
@@ -224,13 +224,13 @@ foreach ($params as $column => $param) {
 	$i++;
 };
 
-$sql = "SELECT id_number, firstname, lastname, educational_level, grade, section FROM students $filter";
+$sql = "SELECT id_number, firstname, lastname, educational_level, year, course FROM students $filter";
 $data = $con->getData($sql);
 
 #
 
 $body = array(
-	"lr_margin"=>7,
+	"lr_margin"=>5,
 	"striped"=>true,
 	"striped_bg"=>function($p) {
 		$p->SetFillColor(223,223,223); # background color		

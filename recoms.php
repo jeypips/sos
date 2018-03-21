@@ -192,6 +192,11 @@ input[type="checkbox"]{
 	<script src="vendors/bootbox/bootbox.min.js"></script>
 	<script src="vendors/growl/jquery.bootstrap-growl.min.js"></script> 	
 	
+	<!-- jQuery  -->
+	<script src="dist/jspdf.min.js"></script>
+	<script src="dist/jspdf.debug.js"></script>
+	<script src="dist/jspdf.plugin.autotable.js"></script>	
+	
 	<!-- Custom Theme Scripts -->
     <script src="angular/angular.min.js"></script>
 	<script src="modules/ui-bootstrap-tpls-2.5.0.min.js"></script>
