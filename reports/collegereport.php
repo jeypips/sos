@@ -176,7 +176,7 @@ $header = array(
 		$p->SetFont('Arial','B',12);
 		$p->SetTextColor(66,66,66);
 		$p->Cell(0,5,"LUCST",0,1,'C');	
-		$p->Cell(0,5,"STUDENTS",0,1,'C');	
+		$p->Cell(0,5,"List of Students",0,1,'C');	
 	},
 	function($p) { # always last item
 		echo null; # important in include
@@ -197,8 +197,7 @@ $footer = array(
 
 $headers = array(
 	array("width"=>20,"column"=>"ID Number"),
-	array("width"=>50,"column"=>"First Name"),
-	array("width"=>50,"column"=>"Last Name"),
+	array("width"=>50,"column"=>"Full Name"),
 	array("width"=>50,"column"=>"Educational Level"),
 	array("width"=>15,"column"=>"Year"),
 	array("width"=>20,"column"=>"Course")
@@ -210,8 +209,6 @@ $con = new pdo_db();
 
 $operators = array(
 	"id_number"=>"=",
-	"firstname"=>"=",
-	"lastname"=>"=",
 	"educational_level"=>"=",
 	"year"=>"=",
 	"course"=>"="
@@ -227,7 +224,7 @@ foreach ($params as $column => $param) {
 	$i++;
 };
 
-$sql = "SELECT id_number, firstname, lastname, educational_level, year, course FROM students $filter";
+$sql = "SELECT id_number, CONCAT(firstname,' ',lastname) fullname, educational_level, year, course FROM students $filter";
 $data = $con->getData($sql);
 
 #

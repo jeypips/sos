@@ -42,6 +42,7 @@
 				<option value="To be dropped for incurring equivalent to 20% of total number of lecture/laboratory hours">To be dropped for incurring equivalent to 20% of total number of lecture/laboratory hours</option>
 				<option value="To send parent notification for parent's conference">To send parent notification for parent's conference</option>
 			</select> -->
+			
 		</div>
 	</div>
 	<br>
@@ -50,6 +51,7 @@
 			<input type="checkbox" ng-model="offense.admitted_excuse" name="admitted_excuse" ng-disabled="controls.ok.btn">
 			<label>To be admitted and be excuse</label>
 		</div>
+		
 	</div>
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12 form-group">
@@ -60,7 +62,7 @@
 	<div class="row">
 		<div class="col-md-12 col-sm-12 col-xs-12 form-group">
 			<input type="checkbox" ng-model="offense.academic_loses" name="academic_loses" ng-disabled="controls.ok.btn">
-			<label>To make up for any academic loses</label>
+			<label>To make up for any academic losses</label>
 		</div>
 	</div>
 	<div class="row">
@@ -98,6 +100,26 @@
 		</div>
 	</div>
 	</div>
+	<div class="col-md-4 col-sm-12 col-xs-12">
+		<label>Equivalent Community Service </label>
+			<br>
+			<select class="form-control" ng-model="offense.com_service" ng-disabled="controls.ok.btn">
+				<option value="none">none</option>
+				<option value="10">10 minutes</option>
+				<option value="15">15 minutes</option>
+				<option value="20">20 minutes</option>
+				<option value="25">25 minutes</option>
+				<option value="30">30 minutes</option>
+				<option value="35">35 minutes</option>
+				<option value="40">40 minutes</option>
+				<option value="45">45 minutes</option>
+				<option value="50">50 minutes</option>
+				<option value="55">55 minutes</option>
+				<option value="60">60 minutes</option>
+				<option value="120">120 minutes</option>
+				<option value="180">180 minutes</option>
+			</select>
+		</div>
 	</form>
 	</div>
 </div>

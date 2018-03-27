@@ -25,7 +25,11 @@ if (isset($_POST['offense']['inc_uniform'],$_POST['offense']['late_tardy'],$_POS
 	$_POST['offense']['parent_notification'] = ($_POST['offense']['parent_notification'])?1:0;
 	$_POST['offense']['recom_others_cb'] = ($_POST['offense']['recom_others_cb'])?1:0;
 	$_POST['offense']['done'] = ($_POST['offense']['done'])?1:0;
+	// if ($_POST['offense']['done'] == true) { $_POST['offense']['com_service'] == "0";}
+	
 }
+
+
 
 // $_POST['offense']['offs_date'] =  date("Y-m-d",strtotime($_POST['offense']['offs_date']));
 $_POST['offense']['recom_date'] =  date("Y-m-d",strtotime($_POST['offense']['recom_date']));
@@ -34,8 +38,12 @@ if ($_POST['offense']['offense_id']) {
 	
 	$offense = $con->updateData($_POST['offense'],'offense_id');
 	
+
+
 } else {
 	
+	
+
 	$offense = $con->insertData($_POST['offense']);
 	echo $con->insertId;
 

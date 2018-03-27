@@ -204,6 +204,16 @@ angular.module('offenses-module',['ui.bootstrap','bootstrap-modal','bootstrap-gr
 			
 		};
 		
+		
+		self.myFunction = function() {
+			
+			window.print();
+			
+		};
+		
+		
+
+		
 	};
 	
 	return new form();

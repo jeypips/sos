@@ -197,9 +197,10 @@ $footer = array(
 
 $headers = array(
 	array("width"=>20,"column"=>"ID Number"),
-	array("width"=>45,"column"=>"Full Name"),
+	array("width"=>30,"column"=>"Full Name"),
 	array("width"=>45,"column"=>"Educational Level"),
-	array("width"=>30,"column"=>"Grade"),
+	array("width"=>30,"column"=>"Strand"),
+	array("width"=>20,"column"=>"Grade"),
 	array("width"=>30,"column"=>"Section"),
 	array("width"=>30,"column"=>"Number of Offenses")
 );
@@ -210,8 +211,9 @@ $con = new pdo_db();
 
 $operators = array(
 	"educational_level"=>"=",
-	"grade"=>"=",
-	"section"=>"="
+	"strand"=>"=",
+	"senior_grade"=>"=",
+	"senior_section"=>"="
 );
 
 $filter = "";
@@ -224,7 +226,7 @@ foreach ($params as $column => $param) {
 	$i++;
 };
 
-$sql = "SELECT id_number, CONCAT(firstname,' ',lastname) fullname, educational_level, grade, section, (SELECT SUM(com_service) FROM offenses) total FROM students $filter";
+$sql = "SELECT id_number, CONCAT(firstname,' ',lastname) fullname, educational_level, strand, senior_grade, senior_section, (SELECT SUM(com_service) FROM offenses) total FROM students $filter";
 $data = $con->getData($sql);
 
 #

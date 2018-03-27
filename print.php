@@ -140,11 +140,11 @@ input[type="checkbox"]{
                     <h2><i class="fa fa-check"></i> Summary Report</h2>
                     <div class="clearfix"></div>
                   </div>
+						<!---->
 						<div class="col-md-3 col-sm-12 col-xs-12">
 							  <label>Educational Level</label>
-							  <select ng-model="filter.educational_level" class="form-control" required>
+							  <select ng-model="filter.educational_level" disabled class="form-control" required>
 								<option value="Junior High School">Junior High School</option>
-								<option value="Senior High School">Senior High School</option>
 							  </select>
 						</div>
 						<div class="col-md-3 col-sm-12 col-xs-12">
@@ -167,30 +167,71 @@ input[type="checkbox"]{
 								<option ng-show="filter.educational_level=='Junior High School'" value="Ceres">Ceres</option>
 								<option ng-show="filter.educational_level=='Junior High School'" value="Hestia">Hestia</option>
 								<option ng-show="filter.educational_level=='Junior High School'" value="Hera">Hera</option>
-								<option ng-show="filter.grade=='11'" value="Artemis">Artemis</option>
-								<option ng-show="filter.grade=='11'" value="Hemera">Hemera</option>
-								<option ng-show="filter.grade=='11'" value="Eros">Eros</option>
-								<option ng-show="filter.grade=='11'" value="Demeter">Demeter</option>
-								<option ng-show="filter.grade=='11'" value="Uranus">Uranus</option>
-								<option ng-show="filter.grade=='11'" value="Themis">Themis</option>
-								<option ng-show="filter.grade=='11'" value="Nyx">Nyx</option>
-								<option ng-show="filter.grade=='11'" value="Apollo">Apollo</option>
-								<option ng-show="filter.grade=='12'" value="Menerva">Menerva</option>
-								<option ng-show="filter.grade=='12'" value="Persephone">Persephone</option>
-								<option ng-show="filter.grade=='12'" value="Hades">Hades</option>
-								<option ng-show="filter.grade=='12'" value="Dionysus">Dionysus</option>
-								<option ng-show="filter.grade=='12'" value="Chronos">Chronos</option>
-								<option ng-show="filter.grade=='12'" value="Janus">Janus</option>
-								<option ng-show="filter.grade=='12'" value="Vesta">Vesta</option>
 							  </select>
                             <span class="input-group-btn">
 							  <button style="margin-top: 24px;" type="button" ng-click="filterReport(this)" class="btn btn-primary">Go!</button>
 						    </span>
                         </div>
 						
+						<!---->
 						<div class="col-md-3 col-sm-12 col-xs-12">
 							  <label>Educational Level</label>
-							  <select ng-model="filterSumCollege.educational_level" class="form-control" required>
+							  <select ng-model="filterz.educational_level" class="form-control" disabled required>
+								<option value="Senior High School">Senior High School</option>
+							  </select>
+						</div>
+						<div class="col-md-3 col-sm-12 col-xs-12">
+							<label>Strand</label>
+                            <select ng-model="filterz.strand" class="form-control" required>
+									<option value="ABM">Accounting, Business and Management</option>
+									<option value="GAS">General Academic Strand</option>
+									<option value="HUMMS">Humanities and Social Sciences Strand</option>
+									<option value="Automovie">Automovie</option>
+									<option value="STEM">Science, Technology, Engineering and Mathematics</option>
+									<option value="Programming">Programming</option>
+									<option value="EIM">Electrical Installation and Maintenance</option>
+									<option value="SMAW">Shielded Metal Arc Welding</option>
+									<option value="Cookery">Cookery</option>
+									<option value="B&P">Bread & Pastry</option>
+									<option value="F&B">Food & Bev</option>
+									<option value="Caregiving">Caregiving</option>
+							  </select>
+						</div>
+						<div class="col-md-3 col-sm-12 col-xs-12">
+							<label>Grade</label>
+                            <select ng-model="filterz.senior_grade" class="form-control" required>
+								<option value="11">11</option>
+								<option value="12">12</option>
+							  </select>
+						</div>
+						<div class="col-md-3 col-sm-12 col-xs-12 input-group">
+							<label>Section</label>
+                            <select ng-model="filterz.senior_section" class="form-control" required>
+								<option ng-show="filterz.senior_grade=='11'" value="Artemis">Artemis</option>
+								<option ng-show="filterz.senior_grade=='11'" value="Hemera">Hemera</option>
+								<option ng-show="filterz.senior_grade=='11'" value="Eros">Eros</option>
+								<option ng-show="filterz.senior_grade=='11'" value="Demeter">Demeter</option>
+								<option ng-show="filterz.senior_grade=='11'" value="Uranus">Uranus</option>
+								<option ng-show="filterz.senior_grade=='11'" value="Themis">Themis</option>
+								<option ng-show="filterz.senior_grade=='11'" value="Nyx">Nyx</option>
+								<option ng-show="filterz.senior_grade=='11'" value="Apollo">Apollo</option>
+								<option ng-show="filterz.senior_grade=='12'" value="Menerva">Menerva</option>
+								<option ng-show="filterz.senior_grade=='12'" value="Persephone">Persephone</option>
+								<option ng-show="filterz.senior_grade=='12'" value="Hades">Hades</option>
+								<option ng-show="filterz.senior_grade=='12'" value="Dionysus">Dionysus</option>
+								<option ng-show="filterz.senior_grade=='12'" value="Chronos">Chronos</option>
+								<option ng-show="filterz.senior_grade=='12'" value="Janus">Janus</option>
+								<option ng-show="filterz.senior_grade=='12'" value="Vesta">Vesta</option>
+							  </select>
+                            <span class="input-group-btn">
+							  <button style="margin-top: 24px;" type="button" ng-click="filterSenior(this)" class="btn btn-primary">Go!</button>
+						    </span>
+                        </div>
+						
+						<!---->
+						<div class="col-md-3 col-sm-12 col-xs-12">
+							  <label>Educational Level</label>
+							  <select ng-model="filterSumCollege.educational_level" disabled class="form-control" required>
 								<option value="College">College</option>
 							  </select>
 						</div>
@@ -218,9 +259,9 @@ input[type="checkbox"]{
                         </div>
                     </div>
 		
-					<!-- <div class="x_panel">
+					 <!--<div class="x_panel">
 						<div class="x_title">
-							<h2><i class="fa fa-check"></i> Single Report - High School</h2>
+							<h2><i class="fa fa-check"></i> Offense</h2>
 							<div class="clearfix"></div>
 						</div>
 						<div class="col-md-6 col-sm-12 col-xs-12">
@@ -248,20 +289,19 @@ input[type="checkbox"]{
 						<div class="col-md-3 col-sm-12 col-xs-12">
 							<button style="margin-top: 23px;" type="button" ng-click="filterReportCollege(this)" class="btn btn-primary">Go!</button>
 						</div>
-					</div> -->
+					</div>-->
 					
-					
+				<form id="filterz" action="reports/senior.php" method="post" target="_blank">
+					<input type="hidden" name="params" value="{{filterz}}">
+				</form>
 				<form id="filterSumCollege" action="reports/sumcollege.php" method="post" target="_blank">
 					<input type="hidden" name="params" value="{{filterSumCollege}}">
 				</form>
-				<form id="filterCollege" action="reports/collegereport.php" method="post" target="_blank">
-					<input type="hidden" name="params" value="{{filterCollege}}">
+				<form id="filterSenior" action="reports/senior.php" method="post" target="_blank">
+					<input type="hidden" name="params" value="{{filterSenior}}">
 				</form>
                 <form id="filter_report" action="reports/template.php" method="post" target="_blank">
 					<input type="hidden" name="params" value="{{filter}}">
-				</form>
-				<form id="filterSingle" action="reports/singlereport.php" method="post" target="_blank">
-					<input type="hidden" name="params" value="{{filterSingle}}">
 				</form>
                     <!-- end form for validations -->
 
@@ -349,17 +389,16 @@ input[type="checkbox"]{
 		form.data($scope);
 		
 		$scope.filter = {
-			educational_level: '',
+			educational_level: 'Junior High School',
 			grade: '',
 			section: ''
 		};
 		
-		$scope.filterSingle = {
-			id_number: ''
-		};
-		
-		$scope.filterCollege = {
-			id_number: ''
+		$scope.filterz = {
+			educational_level: 'Senior High School',
+			strand: '',
+			senior_grade: '',
+			senior_section: ''
 		};
 		
 		$scope.filterSumCollege = {
@@ -386,6 +425,10 @@ input[type="checkbox"]{
 		$scope.filterSummaryCollege = function(scope) {
 			
 			$('#filterSumCollege').submit();
+		};
+		$scope.filterSenior = function(scope) {
+			
+			$('#filterz').submit();
 		};
 		
 	});

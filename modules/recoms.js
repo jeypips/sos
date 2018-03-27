@@ -204,6 +204,12 @@ angular.module('offenses-module',['ui.bootstrap','bootstrap-modal','bootstrap-gr
 			
 		};
 		
+		self.myFunction = function() {
+			
+			window.print();
+			
+		};
+		
 		self.print = function(scope,offense) {
 			
 			$http({

@@ -226,7 +226,6 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-
 				if (scope.student.student_id == 0) {
 				} else {
 				print(scope,response.data);
-				console.log(response.data);
 				}
 			}, function myError(response) {
 				 
@@ -239,7 +238,7 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-
 		
 		function print(scope,student) {
 		
-		var doc = new jsPDF('p','mm','letter');
+		var doc = new jsPDF('p','mm','legal');
 		
 		doc.setFontSize(16)
 		doc.setFont('times');
@@ -253,46 +252,54 @@ angular.module('students-module',['bootstrap-modal','bootstrap-growl','snapshot-
 		doc.setFontType('normal');
 		//X-axis, Y-axis
 		doc.text(20, 30, 'Date added:');
-		doc.text(25, 40, student[0].date);
+		doc.text(70, 30, student[0].date);
 		
-		doc.text(20, 50, 'ID number:');
-		doc.text(25, 60, ''+student[0].id_number);
+		doc.text(20, 40, 'ID number:');
+		doc.text(70, 40, ''+student[0].id_number);
 		
-		doc.text(20, 70, 'Full Name:');
-		doc.text(25, 80, student[0].lastname+','+' '+student[0].firstname+' '+student[0].middlename);
+		doc.text(20, 50, 'Full Name:');
+		doc.text(70, 50, student[0].lastname+','+' '+student[0].firstname+' '+student[0].middlename);
 		
-		doc.text(20, 90, 'Educational Level:');
-		doc.text(25, 100, ''+student[0].educational_level);
+		doc.text(20, 60, 'Educational Level:');
+		doc.text(70, 60, ''+student[0].educational_level);
 		
-		doc.setLineWidth(.5)
-		doc.line(205, 105, 5, 105); // horizontal line  
+		doc.text(20, 70, 'Grade:');
+		doc.text(70, 70, ''+student[0].grade+''+student[0].senior_grade);
 		
-		doc.text(20, 115, 'Junior High School:');
-		
-		doc.text(70, 115, 'Grade');
-		doc.text(70, 125, ''+student[0].grade);
-		
-		doc.text(120, 115, 'Section');
-		doc.text(120, 125, ''+student[0].section);
+		doc.text(20, 80, 'Section:');
+		doc.text(70, 80, ''+student[0].section+''+student[0].senior_section);
+
+		doc.text(20, 90, 'Strand:');
+		doc.text(70, 90, ''+student[0].strand);
 		//
-		doc.text(20, 135, 'Senior High School:');
+		doc.text(20, 100, 'Year:');
+		doc.text(70, 100, ''+student[0].year);
 		
-		doc.text(70, 135, 'Strand');
-		doc.text(70, 145, ''+student[0].strand);
+		doc.text(20, 110, 'Course:');
+		doc.text(70, 110, ''+student[0].course);
 		
-		doc.text(120, 135, 'Grade');
-		doc.text(120, 145, ''+student[0].senior_grade);
-		
-		doc.text(150, 135, 'Section');
-		doc.text(150, 145, ''+student[0].senior_section);
 		//
-		doc.text(20, 155, 'College:');
+		doc.text(20, 120, 'Date');
+		doc.text(20, 130, ''+student[0].offs_date);
 		
-		doc.text(70, 155, 'Year');
-		doc.text(70, 165, ''+student[0].year);
+		doc.text(70, 120, 'Offenses');
+		doc.text(70, 130, ''+student[0].inc_uniform);
 		
-		doc.text(120, 155, 'Course');
-		doc.text(120, 165, ''+student[0].course);
+		doc.text(130, 120, 'Community Service');
+		doc.text(140, 130, ''+student[0].com_service+' '+'minutes');
+		
+		doc.text(180, 120, 'Remarks');
+		doc.text(180, 130, ''+student[0].done);
+		
+		doc.text(20, 140, ''+student[1].offs_date);
+		
+		doc.text(70, 140, ''+student[1].inc_uniform);
+		
+		doc.text(140, 140, ''+student[1].com_service+' '+'minutes');
+		
+		doc.text(180, 140, ''+student[1].done);
+		
+		
 			
 		/* var lMargin=30; //left margin in mm
 		var rMargin=5; //right margin in mm
