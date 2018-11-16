@@ -9,8 +9,6 @@ angular.module('dashboard-module',['bootstrap-modal','bootstrap-growl']).factory
 		
 		self.data = function(scope) { // initialize data	
 				
-			
-		
 		};
 	
 	return new form();
